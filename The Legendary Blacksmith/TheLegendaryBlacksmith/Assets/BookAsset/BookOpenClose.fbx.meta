@@ -1,0 +1,203 @@
+fileFormatVersion: 2
+guid: 1375a87c8075c004887b7e77efa5b787
+timeCreated: 1486741351
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: book_cover
+    100002: //RootNode
+    100004: ct_bookjoint
+    100006: joint10
+    100008: joint10 1
+    100010: joint10 2
+    100012: joint10 3
+    100014: joint10 4
+    100016: joint10 5
+    100018: joint10 6
+    100020: joint10 7
+    100022: joint10 8
+    100024: joint11
+    100026: joint11 1
+    100028: joint11 2
+    100030: joint11 3
+    100032: joint11 4
+    100034: joint11 5
+    100036: joint11 6
+    100038: joint11 7
+    100040: joint12
+    100042: joint13
+    100044: joint14
+    100046: joint15
+    100048: joint16
+    100050: joint17
+    100052: joint18
+    100054: joint19
+    100056: joint8
+    100058: joint9
+    100060: joint9 1
+    100062: joint9 2
+    100064: joint9 3
+    100066: joint9 4
+    100068: joint9 5
+    100070: joint9 6
+    100072: joint9 7
+    100074: joint9 8
+    100076: left_bookjointend
+    100078: lt_bookjoint
+    100080: page1
+    100082: page2
+    100084: page3
+    100086: page4
+    100088: page5
+    100090: page6
+    100092: page7
+    100094: page8
+    100096: page9
+    100098: rt_bookjoint
+    100100: rt_bookjoint_end
+    100102: transform1
+    100104: transform2
+    400000: book_cover
+    400002: //RootNode
+    400004: ct_bookjoint
+    400006: joint10
+    400008: joint10 1
+    400010: joint10 2
+    400012: joint10 3
+    400014: joint10 4
+    400016: joint10 5
+    400018: joint10 6
+    400020: joint10 7
+    400022: joint10 8
+    400024: joint11
+    400026: joint11 1
+    400028: joint11 2
+    400030: joint11 3
+    400032: joint11 4
+    400034: joint11 5
+    400036: joint11 6
+    400038: joint11 7
+    400040: joint12
+    400042: joint13
+    400044: joint14
+    400046: joint15
+    400048: joint16
+    400050: joint17
+    400052: joint18
+    400054: joint19
+    400056: joint8
+    400058: joint9
+    400060: joint9 1
+    400062: joint9 2
+    400064: joint9 3
+    400066: joint9 4
+    400068: joint9 5
+    400070: joint9 6
+    400072: joint9 7
+    400074: joint9 8
+    400076: left_bookjointend
+    400078: lt_bookjoint
+    400080: page1
+    400082: page2
+    400084: page3
+    400086: page4
+    400088: page5
+    400090: page6
+    400092: page7
+    400094: page8
+    400096: page9
+    400098: rt_bookjoint
+    400100: rt_bookjoint_end
+    400102: transform1
+    400104: transform2
+    4300000: book_cover
+    4300002: page1
+    4300004: page2
+    4300006: page3
+    4300008: page4
+    4300010: page5
+    4300012: page6
+    4300014: page7
+    4300016: page8
+    4300018: page9
+    7400000: NIMBUS_3D_Book
+    9500000: //RootNode
+    13700000: book_cover
+    13700002: page1
+    13700004: page2
+    13700006: page3
+    13700008: page4
+    13700010: page5
+    13700012: page6
+    13700014: page7
+    13700016: page8
+    13700018: page9
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
