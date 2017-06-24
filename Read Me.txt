@@ -1,0 +1,10 @@
+Hello! My name is Alan Clark. Welcome to my portfolio!
+
+In each of these folders you will find some of the projects I have worked on for the past few years.
+
+Inside each folder will be a few items:
+- A project folder containing source code
+- A text document describing relevant information about the project, its controls, and required software/hardware
+- An executable in the case there is a problem with building the project on your machine
+
+If you have any questions or would otherwise like to contact me, please email me at alanhughclark@outlook.com.
