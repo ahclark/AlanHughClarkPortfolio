@@ -21,8 +21,8 @@ using namespace std;
 #include "Stage_PS.csh"
 #include "Star_VS.csh"
 #include "Star_PS.csh"
-#include "Turret_VS.csh"
-#include "Turret_PS.csh"
+#include "Rock_VS.csh"
+#include "Rock_PS.csh"
 #include "Texture_PS.csh"
 #include "Portal_PS.csh"
 #include "Physics_CS.csh"
@@ -384,7 +384,6 @@ bool LoadOBJ(char* p_filename, vector<VERTEX>* p_data, unsigned int* p_indicies)
 		vector<XMFLOAT3> normals;
 		vector<VERTEX> tempData;
 
-		int faceIndex = 0;
 		int currBufferIndex;
 		char valueBuffer[16];
 
@@ -551,7 +550,8 @@ bool LoadOBJ(char* p_filename, vector<VERTEX>* p_data, unsigned int* p_indicies)
 				{
 					while (buffer == ' ') // handle more than one space after element descriptor
 						file.get(buffer);
-					for (int i = 0; i < 3; i++)
+					for (int i = 0; buffer !='\n'; i++)
+					//while (buffer != '\n')
 					{
 						VERTEX tempVert;
 						ZeroMemory(&tempVert, sizeof(VERTEX));
@@ -560,6 +560,8 @@ bool LoadOBJ(char* p_filename, vector<VERTEX>* p_data, unsigned int* p_indicies)
 						currBufferIndex = 0;
 						if (buffer == ' ')
 							file.get(buffer);
+						if (buffer == '\n')
+							break;
 						while (buffer >= 48 && buffer <= 57)
 						{
 							valueBuffer[currBufferIndex] = buffer;
@@ -588,11 +590,7 @@ bool LoadOBJ(char* p_filename, vector<VERTEX>* p_data, unsigned int* p_indicies)
 							tempVert.uv.x = UVs[((unsigned int)atof(valueBuffer) - 1)].x;
 							tempVert.uv.y = UVs[((unsigned int)atof(valueBuffer) - 1)].y;
 						}
-						if (buffer == '\n')
-						{
-							tempVert.norm = XMFLOAT3(0.0f, 0.0f, 0.0f);
-						}
-						else if (buffer == '/')
+						if (buffer == '/')
 						{
 							ZeroMemory(&valueBuffer, sizeof(valueBuffer));
 							currBufferIndex = 0;
@@ -605,7 +603,14 @@ bool LoadOBJ(char* p_filename, vector<VERTEX>* p_data, unsigned int* p_indicies)
 							}
 							tempVert.norm = normals[((unsigned int)atof(valueBuffer) - 1)];
 						}
-						tempVert.color = XMFLOAT4(0.0f, 0.0f, 1.0f, 1.0f);
+						tempVert.color = XMFLOAT4(0.0f, 0.0f, 0.0f, 1.0f);
+
+						if (i == 3) // 4th run through
+						{
+							p_indicies[currIndiciesIndex] = p_indicies[currIndiciesIndex - 1];
+							p_indicies[currIndiciesIndex + 1] = p_indicies[currIndiciesIndex - 3];
+							currIndiciesIndex += 2;
+						}
 
 						bool unique = true;
 						for (unsigned int j = 0; j < tempData.size(); j++)
@@ -629,7 +634,6 @@ bool LoadOBJ(char* p_filename, vector<VERTEX>* p_data, unsigned int* p_indicies)
 						currIndiciesIndex++;
 					}
 					swap(p_indicies[currIndiciesIndex - 2], p_indicies[currIndiciesIndex - 1]);
-					faceIndex += 3;
 				}
 			}
 		}

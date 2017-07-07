@@ -73,15 +73,15 @@ class DEMO_APP
 	SEND_TO_VRAM_OBJECT					starToObject;
 	ID3D11Buffer*						starObjectShaderBuffer;
 
-	Object								turret;
-	vector<SEND_TO_VRAM_OBJECT>			turretToObject;
-	ID3D11Buffer*						turretObjectShaderBuffer;
-	ID3D11ShaderResourceView*			turretShaderResourceView;
+	Object								rock;
+	vector<SEND_TO_VRAM_OBJECT>			rockToObject;
+	ID3D11Buffer*						rockObjectShaderBuffer;
+	ID3D11ShaderResourceView*			rockShaderResourceView;
 
-	Object								portalGun;
-	SEND_TO_VRAM_OBJECT					portalGunToObject;
-	ID3D11Buffer*						portalGunObjectShaderBuffer;
-	ID3D11ShaderResourceView*			portalGunShaderResourceView;
+	Object								flashlight;
+	SEND_TO_VRAM_OBJECT					flashlightToObject;
+	ID3D11Buffer*						flashlightObjectShaderBuffer;
+	ID3D11ShaderResourceView*			flashlightShaderResourceView;
 
 	Object								pointLight;
 	SEND_TO_VRAM_OBJECT					pointLightToObject;
@@ -193,10 +193,10 @@ DEMO_APP::DEMO_APP(HINSTANCE hinst, WNDPROC proc)
 	drawDepthStencilState = nullptr;
 	clipDepthStencilState = nullptr;
 	starObjectShaderBuffer = nullptr;
-	turretObjectShaderBuffer = nullptr;
-	turretShaderResourceView = nullptr;
-	portalGunObjectShaderBuffer = nullptr;
-	portalGunShaderResourceView = nullptr;
+	rockObjectShaderBuffer = nullptr;
+	rockShaderResourceView = nullptr;
+	flashlightObjectShaderBuffer = nullptr;
+	flashlightShaderResourceView = nullptr;
 	ToLightBuffer = nullptr;
 	cameraSceneShaderBuffer = nullptr;
 	ballObjectShaderBuffer = nullptr;
@@ -265,14 +265,14 @@ DEMO_APP::DEMO_APP(HINSTANCE hinst, WNDPROC proc)
 	// Point
 	temp.pos = XMFLOAT4(0.0f, 2.0f, 0.0f, 1.0f);
 	temp.dir = XMFLOAT4(0.0f, 0.0f, 0.0f, 1.0f);
-	temp.radius = XMFLOAT4(0.0f, 0.0f, 10.0f, 0.0f);
+	temp.radius = XMFLOAT4(0.0f, 0.0f, 15.0f, 0.0f);
 	temp.color = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
 	ToLight.push_back(temp);
 
 	// Spot
 	temp.pos = XMFLOAT4(0.0f, 0.0f, 0.0f, 2.0f);
 	temp.dir = XMFLOAT4(0.0f, 0.0f, 0.0f, 1.0f);
-	temp.radius = XMFLOAT4(0.99f, 0.85f, 10.0f, 0.0f);
+	temp.radius = XMFLOAT4(0.99f, 0.925f, 10.0f, 0.0f);
 	temp.color = XMFLOAT4(1.0f, 0.001f, 1.0f, 1.0f);
 	ToLight.push_back(temp);
 
@@ -660,63 +660,63 @@ DEMO_APP::DEMO_APP(HINSTANCE hinst, WNDPROC proc)
 	starToObject.localMatrix.r[3].m128_f32[2] = 4.5f;
 	//////////////////// ^ STAR ^ ///////////////////
 
-	//////////////////// v TURRET v ///////////////////
+	//////////////////// v ROCK v ///////////////////
 	int numIndicies = 18417;
-	vector<VERTEX> turretData;
-	unsigned int* turretIndicies;
-	turretIndicies = new unsigned int[numIndicies];
+	vector<VERTEX> rockData;
+	unsigned int* rockIndicies;
+	rockIndicies = new unsigned int[numIndicies];
 
-	LoadOBJ("Models\\portalturret.obj", &turretData, turretIndicies);
+	LoadOBJ("Models\\Rock.obj", &rockData, rockIndicies);
 	
-	turret.Initialize(device, turretData, sizeof(VERTEX) * (UINT)turretData.size(), turretIndicies, sizeof(unsigned int) * numIndicies, Turret_VS, sizeof(Turret_VS), Turret_PS, sizeof(Turret_PS));
-	delete[] turretIndicies;
+	rock.Initialize(device, rockData, sizeof(VERTEX) * (UINT)rockData.size(), rockIndicies, sizeof(unsigned int) * numIndicies, Rock_VS, sizeof(Rock_VS), Rock_PS, sizeof(Rock_PS));
+	delete[] rockIndicies;
 
-	D3D11_BUFFER_DESC turretObjectShaderBufferDesc;
-	ZeroMemory(&turretObjectShaderBufferDesc, sizeof(D3D11_BUFFER_DESC));
-	turretObjectShaderBufferDesc.BindFlags = D3D11_BIND_CONSTANT_BUFFER;
-	turretObjectShaderBufferDesc.ByteWidth = sizeof(SEND_TO_VRAM_OBJECT) * 5;
-	turretObjectShaderBufferDesc.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
-	turretObjectShaderBufferDesc.Usage = D3D11_USAGE_DYNAMIC;
-	device->CreateBuffer(&turretObjectShaderBufferDesc, NULL, &turretObjectShaderBuffer);
+	D3D11_BUFFER_DESC rockObjectShaderBufferDesc;
+	ZeroMemory(&rockObjectShaderBufferDesc, sizeof(D3D11_BUFFER_DESC));
+	rockObjectShaderBufferDesc.BindFlags = D3D11_BIND_CONSTANT_BUFFER;
+	rockObjectShaderBufferDesc.ByteWidth = sizeof(SEND_TO_VRAM_OBJECT) * 5;
+	rockObjectShaderBufferDesc.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
+	rockObjectShaderBufferDesc.Usage = D3D11_USAGE_DYNAMIC;
+	device->CreateBuffer(&rockObjectShaderBufferDesc, NULL, &rockObjectShaderBuffer);
 
 	for (int i = 0; i < 5; i++)
 	{
 		SEND_TO_VRAM_OBJECT temp;
-		temp.localMatrix = XMMatrixMultiply(XMMatrixIdentity(), XMMatrixScaling(0.05f, 0.05f, 0.05f));
+		temp.localMatrix = XMMatrixMultiply(XMMatrixIdentity(), XMMatrixScaling(0.75f, 0.75f, 0.75f));
 		temp.localMatrix.r[3].m128_f32[0] = -7.0f;
 		temp.localMatrix.r[3].m128_f32[1] = -1.5f;
 		temp.localMatrix.r[3].m128_f32[2] = -7.0f + i * 2.5f;
 
-		turretToObject.push_back(temp);
+		rockToObject.push_back(temp);
 	}
-	turretToObject.shrink_to_fit();
+	rockToObject.shrink_to_fit();
 
-	CreateDDSTextureFromFile(device, L"Textures\\portalturret.dds", NULL, &turretShaderResourceView);
-	//////////////////// ^ TURRET ^ ///////////////////
+	CreateDDSTextureFromFile(device, L"Textures\\RockDiffuse.dds", NULL, &rockShaderResourceView);
+	//////////////////// ^ ROCK ^ ///////////////////
 
-	//////////////////// v PORTAL GUN v ///////////////////
+	//////////////////// v FLASHLIGHT v ///////////////////
 	numIndicies = 12351;
-	vector<VERTEX> portalGunData;
-	unsigned int* portalGunIndicies;
-	portalGunIndicies = new unsigned int[numIndicies];
+	vector<VERTEX> flashlightData;
+	unsigned int* flashlightIndicies;
+	flashlightIndicies = new unsigned int[numIndicies];
 
-	LoadOBJ("Models\\Portal Gun.obj", &portalGunData, portalGunIndicies);
+	LoadOBJ("Models\\Flashlight.obj", &flashlightData, flashlightIndicies);
 
-	portalGun.Initialize(device, portalGunData, sizeof(VERTEX) * (UINT)portalGunData.size(), portalGunIndicies, sizeof(unsigned int) * numIndicies, Stage_VS, sizeof(Stage_VS), Turret_PS, sizeof(Turret_PS));
-	delete[] portalGunIndicies;
+	flashlight.Initialize(device, flashlightData, sizeof(VERTEX) * (UINT)flashlightData.size(), flashlightIndicies, sizeof(unsigned int) * numIndicies, Stage_VS, sizeof(Stage_VS), Rock_PS, sizeof(Rock_PS));
+	delete[] flashlightIndicies;
 
-	D3D11_BUFFER_DESC portalGunObjectShaderBufferDesc;
-	ZeroMemory(&portalGunObjectShaderBufferDesc, sizeof(D3D11_BUFFER_DESC));
-	portalGunObjectShaderBufferDesc.BindFlags = D3D11_BIND_CONSTANT_BUFFER;
-	portalGunObjectShaderBufferDesc.ByteWidth = sizeof(SEND_TO_VRAM_OBJECT);
-	portalGunObjectShaderBufferDesc.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
-	portalGunObjectShaderBufferDesc.Usage = D3D11_USAGE_DYNAMIC;
-	device->CreateBuffer(&portalGunObjectShaderBufferDesc, NULL, &portalGunObjectShaderBuffer);
+	D3D11_BUFFER_DESC flashlightObjectShaderBufferDesc;
+	ZeroMemory(&flashlightObjectShaderBufferDesc, sizeof(D3D11_BUFFER_DESC));
+	flashlightObjectShaderBufferDesc.BindFlags = D3D11_BIND_CONSTANT_BUFFER;
+	flashlightObjectShaderBufferDesc.ByteWidth = sizeof(SEND_TO_VRAM_OBJECT);
+	flashlightObjectShaderBufferDesc.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
+	flashlightObjectShaderBufferDesc.Usage = D3D11_USAGE_DYNAMIC;
+	device->CreateBuffer(&flashlightObjectShaderBufferDesc, NULL, &flashlightObjectShaderBuffer);
 
-	portalGunToObject.localMatrix = XMMatrixMultiply(XMMatrixIdentity(), XMMatrixScaling(1.0f, 1.0f, 1.0f));
+	flashlightToObject.localMatrix = XMMatrixMultiply(XMMatrixIdentity(), XMMatrixScaling(1.0f, 1.0f, 1.0f));
 
-	CreateDDSTextureFromFile(device, L"Textures\\Portal_Gun\\portalgun_col.dds", NULL, &portalGunShaderResourceView);
-	//////////////////// ^ PORTAL GUN ^ ///////////////////
+	CreateDDSTextureFromFile(device, L"Textures\\concrete-wall.dds", NULL, &flashlightShaderResourceView);
+	//////////////////// ^ FLASHLIGHT ^ ///////////////////
 
 	//////////////////// v BALL PIT v ///////////////////
 	D3D11_BUFFER_DESC ballObjectShaderBufferDesc;
@@ -1083,13 +1083,13 @@ bool DEMO_APP::Run()
 		if (GetAsyncKeyState(VK_LCONTROL))
 			viewY -= (float)timer.Delta() * multiplier;
 		if (GetAsyncKeyState('I'))
-			ToLight[1].pos.z += (float)timer.Delta() * multiplier;
+			ToLight[1].pos.z += (float)timer.Delta() * 3.0f;
 		if (GetAsyncKeyState('K'))
-			ToLight[1].pos.z -= (float)timer.Delta() * multiplier;
+			ToLight[1].pos.z -= (float)timer.Delta() * 3.0f;
 		if (GetAsyncKeyState('J'))
-			ToLight[1].pos.x -= (float)timer.Delta() * multiplier;
+			ToLight[1].pos.x -= (float)timer.Delta() * 3.0f;
 		if (GetAsyncKeyState('L'))
-			ToLight[1].pos.x += (float)timer.Delta() * multiplier;
+			ToLight[1].pos.x += (float)timer.Delta() * 3.0f;
 
 		//if (GetAsyncKeyState('K'))
 		//{
@@ -1167,13 +1167,14 @@ bool DEMO_APP::Run()
 	starToObject.localMatrix = XMMatrixMultiply(rotation, starToObject.localMatrix);
 	//////////////////// ^ STAR SETUP ^ ////////////////////
 
-	//////////////////// v PORTAL GUN SETUP v ///////////////////
-	portalGunToObject.localMatrix = viewMatrix;
-	portalGunToObject.localMatrix = XMMatrixMultiply(XMMatrixTranslation(1.0f, -0.7f, 1.5f), portalGunToObject.localMatrix);
-	portalGunToObject.localMatrix = XMMatrixMultiply(XMMatrixRotationX(-0.2f), portalGunToObject.localMatrix);
-	portalGunToObject.localMatrix = XMMatrixMultiply(XMMatrixRotationY(0.7f), portalGunToObject.localMatrix);
-	portalGunToObject.localMatrix = XMMatrixMultiply(XMMatrixRotationZ(0.4f), portalGunToObject.localMatrix);
-	//////////////////// ^ PORTAL GUN SETUP ^ ///////////////////
+	//////////////////// v FLASHLIGHT SETUP v ///////////////////
+	flashlightToObject.localMatrix = viewMatrix;
+	flashlightToObject.localMatrix = XMMatrixMultiply(XMMatrixTranslation(0.75f, -0.7f, 0.5f), flashlightToObject.localMatrix);
+	flashlightToObject.localMatrix = XMMatrixMultiply(XMMatrixRotationX(0.0f), flashlightToObject.localMatrix);
+	flashlightToObject.localMatrix = XMMatrixMultiply(XMMatrixRotationY(1.5f), flashlightToObject.localMatrix);
+	flashlightToObject.localMatrix = XMMatrixMultiply(XMMatrixRotationZ(0.0f), flashlightToObject.localMatrix);
+	flashlightToObject.localMatrix = XMMatrixMultiply(XMMatrixScaling(0.005f, 0.005f, 0.005f), flashlightToObject.localMatrix);
+	//////////////////// ^ FLASHLIGHT SETUP ^ ///////////////////
 
 	ToLight[2].pos.x = viewMatrix.r[3].m128_f32[0];
 	ToLight[2].pos.y = viewMatrix.r[3].m128_f32[1];
@@ -1253,9 +1254,9 @@ bool DEMO_APP::Run()
 	stage.Draw(deviceContext, stageObjectShaderBuffer, stageToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 12, 0);
 	// Star
 	star.Draw(deviceContext, starObjectShaderBuffer, starToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 60, 0);
-	// Turret
-	deviceContext->PSSetShaderResources(0, 1, &turretShaderResourceView);
-	turret.Draw(deviceContext, turretObjectShaderBuffer, turretToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 18417, 0);
+	// Rock
+	deviceContext->PSSetShaderResources(0, 1, &rockShaderResourceView);
+	rock.Draw(deviceContext, rockObjectShaderBuffer, rockToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 18417, 0);
 	// Ball Pit
 	deviceContext->CSSetShader(ComputeShader, NULL, 0);
 	for (int j = 0; j < 25; j++)
@@ -1269,9 +1270,9 @@ bool DEMO_APP::Run()
 		ballToObject.localMatrix.r[3].m128_f32[2] = particles[i].posZ;
 		ball.Draw(deviceContext, ballObjectShaderBuffer, ballToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 36, 0);
 	}
-	// Portal Gun
-	deviceContext->PSSetShaderResources(0, 1, &portalGunShaderResourceView);
-	portalGun.Draw(deviceContext, portalGunObjectShaderBuffer, portalGunToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 12351, 0);
+	// Flashlight
+	deviceContext->PSSetShaderResources(0, 1, &flashlightShaderResourceView);
+	flashlight.Draw(deviceContext, flashlightObjectShaderBuffer, flashlightToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 12351, 0);
 	//////////////////// ^ PORTAL ONE VIEW ^ ///////////////////
 
 	////////////////// v PORTAL TWO VIEW v ///////////////////
@@ -1297,9 +1298,9 @@ bool DEMO_APP::Run()
 	stage.Draw(deviceContext, stageObjectShaderBuffer, stageToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 12, 0);
 	// Star
 	star.Draw(deviceContext, starObjectShaderBuffer, starToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 60, 0);
-	// Turret
-	deviceContext->PSSetShaderResources(0, 1, &turretShaderResourceView);
-	turret.Draw(deviceContext, turretObjectShaderBuffer, turretToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 18417, 0);
+	// Rock
+	deviceContext->PSSetShaderResources(0, 1, &rockShaderResourceView);
+	rock.Draw(deviceContext, rockObjectShaderBuffer, rockToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 18417, 0);
 	// Ball Pit
 	deviceContext->CSSetShader(ComputeShader, NULL, 0);
 	for (int j = 0; j < 25; j++)
@@ -1313,9 +1314,9 @@ bool DEMO_APP::Run()
 		ballToObject.localMatrix.r[3].m128_f32[2] = particles[i].posZ;
 		ball.Draw(deviceContext, ballObjectShaderBuffer, ballToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 36, 0);
 	}
-	// Portal Gun
-	deviceContext->PSSetShaderResources(0, 1, &portalGunShaderResourceView);
-	portalGun.Draw(deviceContext, portalGunObjectShaderBuffer, portalGunToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 12351, 0);
+	// Flashlight
+	deviceContext->PSSetShaderResources(0, 1, &flashlightShaderResourceView);
+	flashlight.Draw(deviceContext, flashlightObjectShaderBuffer, flashlightToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 12351, 0);
 	////////////////// ^ PORTAL TWO VIEW ^ ///////////////////
 
 	deviceContext->OMSetRenderTargets(1, &renderTargetView, depthStencilView);
@@ -1349,10 +1350,10 @@ bool DEMO_APP::Run()
 	star.Draw(deviceContext, starObjectShaderBuffer, starToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 60, 0);
 	//////////////////// ^ STAR DRAW ^ ////////////////////
 
-	//////////////////// v TURRET DRAW v ///////////////////
-	deviceContext->PSSetShaderResources(0, 1, &turretShaderResourceView);
-	turret.Draw(deviceContext, turretObjectShaderBuffer, turretToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 18417, 0);
-	//////////////////// ^ TURRET DRAW ^ ///////////////////
+	//////////////////// v ROCK DRAW v ///////////////////
+	deviceContext->PSSetShaderResources(0, 1, &rockShaderResourceView);
+	rock.Draw(deviceContext, rockObjectShaderBuffer, rockToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 18417, 0);
+	//////////////////// ^ ROCK DRAW ^ ///////////////////
 
 	//////////////////// v BALL PIT DRAW v ///////////////////
 	deviceContext->CSSetShader(ComputeShader, NULL, 0);
@@ -1385,11 +1386,11 @@ bool DEMO_APP::Run()
 	deviceContext->OMSetDepthStencilState(NULL, 0);
 	//////////////////// ^ WALL DRAW ^ ///////////////////
 
-	//////////////////// v PORTAL GUN DRAW v ///////////////////
+	//////////////////// v FLASHLIGHT DRAW v ///////////////////
 	deviceContext->ClearDepthStencilView(depthStencilView, D3D11_CLEAR_DEPTH, 1.0f, NULL);
-	deviceContext->PSSetShaderResources(0, 1, &portalGunShaderResourceView);
-	portalGun.Draw(deviceContext, portalGunObjectShaderBuffer, portalGunToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 12351, 0);
-	//////////////////// ^ PORTAL GUN DRAW ^ ///////////////////
+	deviceContext->PSSetShaderResources(0, 1, &flashlightShaderResourceView);
+	flashlight.Draw(deviceContext, flashlightObjectShaderBuffer, flashlightToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 12351, 0);
+	//////////////////// ^ FLASHLIGHT DRAW ^ ///////////////////
 
 	//////////////////// v MINIMAP v ///////////////////
 	deviceContext->RSSetViewports(1, &miniViewport);
@@ -1412,9 +1413,9 @@ bool DEMO_APP::Run()
 	stage.Draw(deviceContext, stageObjectShaderBuffer, stageToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 12, 0);
 	// Star
 	star.Draw(deviceContext, starObjectShaderBuffer, starToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 60, 0);
-	// Turret
-	deviceContext->PSSetShaderResources(0, 1, &turretShaderResourceView);
-	turret.Draw(deviceContext, turretObjectShaderBuffer, turretToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 18417, 0);
+	// Rock
+	deviceContext->PSSetShaderResources(0, 1, &rockShaderResourceView);
+	rock.Draw(deviceContext, rockObjectShaderBuffer, rockToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 18417, 0);
 	// Ball Pit
 	deviceContext->CSSetShader(ComputeShader, NULL, 0);
 	for (int j = 0; j < 25; j++)
@@ -1439,9 +1440,9 @@ bool DEMO_APP::Run()
 	deviceContext->PSSetShaderResources(0, 1, &wallShaderResourceView);
 	wall.Draw(deviceContext, wallObjectShaderBuffer, wallToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 36, 0);
 	//deviceContext->OMSetDepthStencilState(NULL, 0);
-	// Portal Gun
-	deviceContext->PSSetShaderResources(0, 1, &portalGunShaderResourceView);
-	portalGun.Draw(deviceContext, portalGunObjectShaderBuffer, portalGunToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 12351, 0);
+	// Flashlight
+	deviceContext->PSSetShaderResources(0, 1, &flashlightShaderResourceView);
+	flashlight.Draw(deviceContext, flashlightObjectShaderBuffer, flashlightToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 12351, 0);
 	//////////////////// ^ MINIMAP ^ ///////////////////
 
 	swapchain->Present(0, 0);
@@ -1501,14 +1502,14 @@ bool DEMO_APP::ShutDown()
 		clipDepthStencilState->Release();
 	if (starObjectShaderBuffer != nullptr)
 		starObjectShaderBuffer->Release();
-	if (turretObjectShaderBuffer != nullptr)
-		turretObjectShaderBuffer->Release();
-	if (turretShaderResourceView != nullptr)
-		turretShaderResourceView->Release();
-	if (portalGunObjectShaderBuffer != nullptr)
-		portalGunObjectShaderBuffer->Release();
-	if (portalGunShaderResourceView != nullptr)
-		portalGunShaderResourceView->Release();
+	if (rockObjectShaderBuffer != nullptr)
+		rockObjectShaderBuffer->Release();
+	if (rockShaderResourceView != nullptr)
+		rockShaderResourceView->Release();
+	if (flashlightObjectShaderBuffer != nullptr)
+		flashlightObjectShaderBuffer->Release();
+	if (flashlightShaderResourceView != nullptr)
+		flashlightShaderResourceView->Release();
 	if (ToLightBuffer != nullptr)
 		ToLightBuffer->Release();
 	if (cameraSceneShaderBuffer != nullptr)

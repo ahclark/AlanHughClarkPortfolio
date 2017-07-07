@@ -21,12 +21,13 @@ float4 main(PS_IN input) : SV_TARGET
 	}
 	result = result / 4;
 
-	float temp;
-	temp = dot(result.rgb, float3(0.3, 0.59, 0.11));
-	result.r = temp;
-	result.g = temp;
-	result.b = temp;
-	result.a = 1.0f;
+	// Grayscale
+	//float temp;
+	//temp = dot(result.rgb, float3(0.3, 0.59, 0.11));
+	//result.r = temp;
+	//result.g = temp;
+	//result.b = temp;
+	//result.a = 1.0f;
 
 	return result;
 }

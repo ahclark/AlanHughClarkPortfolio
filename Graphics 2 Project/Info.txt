@@ -1,0 +1,40 @@
+Title: Graphics 2 Project
+
+Description:
+The task set in front me for this project was to implement all of the 3D Graphics Programming 
+skills and techniques I had learned in the previous course as well as research and apply new techniques.
+
+Software Used:
+Windows 10 (64-bit)
+Visual Studios 2015
+DirectX 11
+
+Controls:
+Quick Exit - Esc
+**Press (TAB) to toggle the following**
+Movement - WASD
+Up -  Space
+Down - Left Ctrl
+Look Around - Mouse
+Sprint - Left Shift
+Move Point Light - IJKL
+
+Time Taken:
+1 Month
+
+Features:
+- 3D Rendering of Textured Models
+- Camera Translation and Rotation
+- Render to Texture (Used for Portals)
+- Stencil Buffer (Used to avoid z-fighting on the Portals against the gray wall)
+- Infinite Sky Box (Always visible. Doesn’t translate with camera movement)
+- Directional Light (Blue light pointing down on the checkerboard ground
+- Point Light (White light in the center of the stage. Can be moved with IJKL)
+- Spot Light (Magenta light pointing forward moving with the camera’s position)
+- OBJ File Loading (Rocks and Flashlight)
+- Geometry Instancing (Multiple Rocks with one draw call)
+- Vertex-based Color Mapping (Used to color the Star)
+- Compute Shader (Used for the particle physics in the Red Box Fountain)
+- 4x Multisample Anti-Aliasing - MSAA (Applied to all drawn geometry and the Portal’s Textures)
+- Dynamic Window Resizing (All scene variables and buffers updated accordingly)
+- Multiple Viewport Scenes (Used to render the Minimap in the top left corner)

@@ -32,8 +32,10 @@ float3 spotLightFunc(LIGHT light, float3 surfaceNorm, float3 surfacePos)
 	dir = normalize(light.pos.xyz - surfacePos);
 	float surfaceRatio;
 	surfaceRatio = saturate(dot(-dir, normalize(light.dir.xyz)));
-	float spotFactor;
-	spotFactor = (surfaceRatio > light.radius.y) ? 1 : 0;
+	float spotFactor = 0.0f;
+	//spotFactor = (surfaceRatio > light.radius.y) ? 0.75f : 0.0f;
+	if (surfaceRatio > light.radius.y)
+		spotFactor = 0.75f * (1.0f - (1.0f - surfaceRatio) * 1.0f / (1.0f - light.radius.y));
 	float lightRatio;
 	lightRatio = saturate(dot(dir, normalize(surfaceNorm)));
 

@@ -43,11 +43,11 @@
     <FxCompile Include="Skybox_VS.hlsl" />
     <FxCompile Include="Stage_PS.hlsl" />
     <FxCompile Include="Stage_VS.hlsl" />
-    <FxCompile Include="Turret_PS.hlsl" />
-    <FxCompile Include="Turret_VS.hlsl" />
     <FxCompile Include="Texture_PS.hlsl" />
     <FxCompile Include="Portal_PS.hlsl" />
     <FxCompile Include="Physics_CS.hlsl" />
+    <FxCompile Include="Rock_PS.hlsl" />
+    <FxCompile Include="Rock_VS.hlsl" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Light.hlsli" />
