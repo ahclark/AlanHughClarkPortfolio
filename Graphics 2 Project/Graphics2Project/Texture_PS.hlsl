@@ -54,9 +54,9 @@ float4 main(PS_IN input) : SV_TARGET
 	}
 
 	result = float4(0.0f, 0.0f, 0.0f, 0.0f);
-	for (int i = 0; i < 3; i++)
+	for (int j = 0; j < 3; j++)
 	{
-		result += results[i];
+		result += results[j];
 	}
 
 	return saturate(result);

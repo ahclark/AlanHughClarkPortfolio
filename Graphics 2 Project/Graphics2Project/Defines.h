@@ -104,7 +104,14 @@ public:
 					UINT p_PSSize,
 					const void* p_CS,
 					UINT p_CSSize);
-	bool Initialize(ID3D11Device* p_device, vector<VERTEX> p_data, UINT p_dataSize, unsigned int* p_indicies, UINT p_indiciesSize, const void* p_VS, UINT p_VSSize, const void* p_PS, UINT p_PSSize);
+	bool Initialize(ID3D11Device* p_device,
+					vector<VERTEX> p_data, UINT p_dataSize,
+					unsigned int* p_indicies,
+					UINT p_indiciesSize,
+					const void* p_VS,
+					UINT p_VSSize,
+					const void* p_PS,
+					UINT p_PSSize);
 	bool Draw(	ID3D11DeviceContext* p_deviceContext,
 				ID3D11Buffer* p_ObjectShaderBuffer,
 				SEND_TO_VRAM_OBJECT p_ToObject,

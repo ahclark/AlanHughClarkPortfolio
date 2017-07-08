@@ -664,7 +664,7 @@ DEMO_APP::DEMO_APP(HINSTANCE hinst, WNDPROC proc)
 	//////////////////// ^ STAR ^ ///////////////////
 
 	//////////////////// v ROCK v ///////////////////
-	int numIndicies = 18417;
+	int numIndicies = 10000;
 	vector<VERTEX> rockData;
 	unsigned int* rockIndicies;
 	rockIndicies = new unsigned int[numIndicies];
@@ -698,7 +698,7 @@ DEMO_APP::DEMO_APP(HINSTANCE hinst, WNDPROC proc)
 	//////////////////// ^ ROCK ^ ///////////////////
 
 	//////////////////// v FLASHLIGHT v ///////////////////
-	numIndicies = 12351;
+	numIndicies = 10000;
 	vector<VERTEX> flashlightData;
 	unsigned int* flashlightIndicies;
 	flashlightIndicies = new unsigned int[numIndicies];
@@ -1269,7 +1269,7 @@ bool DEMO_APP::Run()
 	// Rock
 	deviceContext->PSSetShaderResources(0, 1, &rockShaderResourceView);
 	deviceContext->RSSetState(FrontFaceCulling);
-	rock.Draw(deviceContext, rockObjectShaderBuffer, rockToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 18417, 0);
+	rock.Draw(deviceContext, rockObjectShaderBuffer, rockToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 10000, 0);
 	deviceContext->RSSetState(MSAAEnabled);
 	// Ball Pit
 	deviceContext->CSSetShader(ComputeShader, NULL, 0);
@@ -1287,7 +1287,7 @@ bool DEMO_APP::Run()
 	// Flashlight
 	deviceContext->PSSetShaderResources(0, 1, &flashlightShaderResourceView);
 	deviceContext->RSSetState(FrontFaceCulling);
-	flashlight.Draw(deviceContext, flashlightObjectShaderBuffer, flashlightToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 12351, 0);
+	flashlight.Draw(deviceContext, flashlightObjectShaderBuffer, flashlightToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 10000, 0);
 	deviceContext->RSSetState(MSAAEnabled);
 	//////////////////// ^ PORTAL ONE VIEW ^ ///////////////////
 
@@ -1317,7 +1317,7 @@ bool DEMO_APP::Run()
 	// Rock
 	deviceContext->PSSetShaderResources(0, 1, &rockShaderResourceView);
 	deviceContext->RSSetState(FrontFaceCulling);
-	rock.Draw(deviceContext, rockObjectShaderBuffer, rockToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 18417, 0);
+	rock.Draw(deviceContext, rockObjectShaderBuffer, rockToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 10000, 0);
 	deviceContext->RSSetState(MSAAEnabled);
 	// Ball Pit
 	deviceContext->CSSetShader(ComputeShader, NULL, 0);
@@ -1335,7 +1335,7 @@ bool DEMO_APP::Run()
 	// Flashlight
 	deviceContext->PSSetShaderResources(0, 1, &flashlightShaderResourceView);
 	deviceContext->RSSetState(FrontFaceCulling);
-	flashlight.Draw(deviceContext, flashlightObjectShaderBuffer, flashlightToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 12351, 0);
+	flashlight.Draw(deviceContext, flashlightObjectShaderBuffer, flashlightToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 10000, 0);
 	deviceContext->RSSetState(MSAAEnabled);
 	////////////////// ^ PORTAL TWO VIEW ^ ///////////////////
 
@@ -1373,7 +1373,7 @@ bool DEMO_APP::Run()
 	//////////////////// v ROCK DRAW v ///////////////////
 	deviceContext->PSSetShaderResources(0, 1, &rockShaderResourceView);
 	deviceContext->RSSetState(FrontFaceCulling);
-	rock.Draw(deviceContext, rockObjectShaderBuffer, rockToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 18417, 0);
+	rock.Draw(deviceContext, rockObjectShaderBuffer, rockToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 10000, 0);
 	deviceContext->RSSetState(MSAAEnabled);
 	//////////////////// ^ ROCK DRAW ^ ///////////////////
 
@@ -1412,7 +1412,7 @@ bool DEMO_APP::Run()
 	deviceContext->ClearDepthStencilView(depthStencilView, D3D11_CLEAR_DEPTH, 1.0f, NULL);
 	deviceContext->PSSetShaderResources(0, 1, &flashlightShaderResourceView);
 	deviceContext->RSSetState(FrontFaceCulling);
-	flashlight.Draw(deviceContext, flashlightObjectShaderBuffer, flashlightToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 12351, 0);
+	flashlight.Draw(deviceContext, flashlightObjectShaderBuffer, flashlightToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 10000, 0);
 	deviceContext->RSSetState(MSAAEnabled);
 	//////////////////// ^ FLASHLIGHT DRAW ^ ///////////////////
 
@@ -1440,7 +1440,7 @@ bool DEMO_APP::Run()
 	// Rock
 	deviceContext->PSSetShaderResources(0, 1, &rockShaderResourceView);
 	deviceContext->RSSetState(FrontFaceCulling);
-	rock.Draw(deviceContext, rockObjectShaderBuffer, rockToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 18417, 0);
+	rock.Draw(deviceContext, rockObjectShaderBuffer, rockToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 10000, 0);
 	deviceContext->RSSetState(MSAAEnabled);
 	// Ball Pit
 	deviceContext->CSSetShader(ComputeShader, NULL, 0);
@@ -1469,7 +1469,7 @@ bool DEMO_APP::Run()
 	// Flashlight
 	deviceContext->PSSetShaderResources(0, 1, &flashlightShaderResourceView);
 	deviceContext->RSSetState(FrontFaceCulling);
-	flashlight.Draw(deviceContext, flashlightObjectShaderBuffer, flashlightToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 12351, 0);
+	flashlight.Draw(deviceContext, flashlightObjectShaderBuffer, flashlightToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 10000, 0);
 	deviceContext->RSSetState(MSAAEnabled);
 	//////////////////// ^ MINIMAP ^ ///////////////////
 
