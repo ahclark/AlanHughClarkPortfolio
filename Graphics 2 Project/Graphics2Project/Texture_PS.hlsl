@@ -23,6 +23,14 @@ float4 main(PS_IN input) : SV_TARGET
 	float4 result, textureColor;
 	result = float4(0.0f, 0.0f, 0.0f, 0.0f);
 	textureColor = Texture.Sample(filters[0], input.uv);
+
+	// Help lights display on darker colors
+	for (int i = 0; i < 4; i++)
+	{
+		if (textureColor[i] >= 0.0f && textureColor[i] <= 0.15f)
+			textureColor[i] += 0.15f;
+	}
+
 	float4 results[3];
 
 	for (int i = 0; i < 3; i++)

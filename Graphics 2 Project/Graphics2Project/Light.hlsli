@@ -11,7 +11,7 @@ struct LIGHT
 float3 dirLightFunc(LIGHT light, float3 surfaceNorm)
 {
 	float3 ratio;
-	ratio = saturate(dot(-light.dir.xyz, surfaceNorm));
+	ratio = saturate(dot(-normalize(light.dir.xyz), surfaceNorm));
 	return ratio * light.color;
 }
 

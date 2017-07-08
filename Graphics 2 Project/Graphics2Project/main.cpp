@@ -108,6 +108,8 @@ class DEMO_APP
 
 	ID3D11RasterizerState*				MSAAEnabled;
 
+	ID3D11RasterizerState*				FrontFaceCulling;
+
 	XTime								timer;
 
 	D3D11_MAPPED_SUBRESOURCE			mapSubresource;
@@ -208,6 +210,7 @@ DEMO_APP::DEMO_APP(HINSTANCE hinst, WNDPROC proc)
 	depthStencilView = nullptr;
 	samplerState = nullptr;
 	MSAAEnabled = nullptr;
+	FrontFaceCulling = nullptr;
 
 	DXGI_SWAP_CHAIN_DESC swapchainDesc;
 	ZeroMemory(&swapchainDesc, sizeof(DXGI_SWAP_CHAIN_DESC));
@@ -257,23 +260,23 @@ DEMO_APP::DEMO_APP(HINSTANCE hinst, WNDPROC proc)
 	// Directional
 	SEND_TO_VRAM_LIGHT temp;
 	temp.pos = XMFLOAT4(0.0f, 0.0f, 0.0f, 0.0f);
-	temp.dir = XMFLOAT4(0.0f, -1.0f, 0.0f, 1.0f);
+	temp.dir = XMFLOAT4(0.0f, -1.0f, 0.75f, 1.0f);
 	temp.radius = XMFLOAT4(0.0f, 0.0f, 0.0f, 0.0f);
-	temp.color = XMFLOAT4(0.001f, 0.001f, 1.001f, 1.0f);
+	temp.color = XMFLOAT4(0.6f, 0.6f, 0.6f, 1.0f);
 	ToLight.push_back(temp);
 
 	// Point
-	temp.pos = XMFLOAT4(0.0f, 2.0f, 0.0f, 1.0f);
+	temp.pos = XMFLOAT4(0.0f, 0.5f, 0.0f, 1.0f);
 	temp.dir = XMFLOAT4(0.0f, 0.0f, 0.0f, 1.0f);
 	temp.radius = XMFLOAT4(0.0f, 0.0f, 15.0f, 0.0f);
-	temp.color = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
+	temp.color = XMFLOAT4(1.0f, 0.001f, 0.001f, 1.0f);
 	ToLight.push_back(temp);
 
 	// Spot
 	temp.pos = XMFLOAT4(0.0f, 0.0f, 0.0f, 2.0f);
 	temp.dir = XMFLOAT4(0.0f, 0.0f, 0.0f, 1.0f);
 	temp.radius = XMFLOAT4(0.99f, 0.925f, 10.0f, 0.0f);
-	temp.color = XMFLOAT4(1.0f, 0.001f, 1.0f, 1.0f);
+	temp.color = XMFLOAT4(0.001f, 0.001f, 1.0f, 1.0f);
 	ToLight.push_back(temp);
 
 	D3D11_BUFFER_DESC ToLightBufferDesc;
@@ -702,7 +705,7 @@ DEMO_APP::DEMO_APP(HINSTANCE hinst, WNDPROC proc)
 
 	LoadOBJ("Models\\Flashlight.obj", &flashlightData, flashlightIndicies);
 
-	flashlight.Initialize(device, flashlightData, sizeof(VERTEX) * (UINT)flashlightData.size(), flashlightIndicies, sizeof(unsigned int) * numIndicies, Stage_VS, sizeof(Stage_VS), Rock_PS, sizeof(Rock_PS));
+	flashlight.Initialize(device, flashlightData, sizeof(VERTEX) * (UINT)flashlightData.size(), flashlightIndicies, sizeof(unsigned int) * numIndicies, Stage_VS, sizeof(Stage_VS), Texture_PS, sizeof(Texture_PS));
 	delete[] flashlightIndicies;
 
 	D3D11_BUFFER_DESC flashlightObjectShaderBufferDesc;
@@ -715,7 +718,7 @@ DEMO_APP::DEMO_APP(HINSTANCE hinst, WNDPROC proc)
 
 	flashlightToObject.localMatrix = XMMatrixMultiply(XMMatrixIdentity(), XMMatrixScaling(1.0f, 1.0f, 1.0f));
 
-	CreateDDSTextureFromFile(device, L"Textures\\concrete-wall.dds", NULL, &flashlightShaderResourceView);
+	CreateDDSTextureFromFile(device, L"Textures\\Flashlight.dds", NULL, &flashlightShaderResourceView);
 	//////////////////// ^ FLASHLIGHT ^ ///////////////////
 
 	//////////////////// v BALL PIT v ///////////////////
@@ -771,14 +774,14 @@ DEMO_APP::DEMO_APP(HINSTANCE hinst, WNDPROC proc)
 	VERTEX ballData[8] =
 	{
 		{ { 0.0f, 0.0f }, { -1.0f, 1.0f, -1.0f }, { 0.0f, 0.0f, -1.0f }, { 1.0f, 0.0f, 0.0f, 1.0f } },
-		{ { 1.0f, 0.0f }, { 1.0f, 1.0f, -1.0f }, { 0.0f, 0.0f, -1.0f }, { 1.0f, 0.0f, 0.0f, 1.0f } },
-		{ { 1.0f, 1.0f }, { 1.0f, -1.0f, -1.0f }, { 0.0f, 0.0f, -1.0f }, { 1.0f, 0.0f, 0.0f, 1.0f } },
-		{ { 0.0f, 1.0f }, { -1.0f, -1.0f, -1.0f }, { 0.0f, 0.0f, -1.0f }, { 1.0f, 0.0f, 0.0f, 1.0f } },
+		{ { 1.0f, 0.0f }, { 1.0f, 1.0f, -1.0f }, { 0.0f, 0.0f, -1.0f }, { 0.0f, 1.0f, 0.0f, 1.0f } },
+		{ { 1.0f, 1.0f }, { 1.0f, -1.0f, -1.0f }, { 0.0f, 0.0f, -1.0f }, { 0.0f, 0.0f, 1.0f, 1.0f } },
+		{ { 0.0f, 1.0f }, { -1.0f, -1.0f, -1.0f }, { 0.0f, 0.0f, -1.0f }, { 1.0f, 1.0f, 0.0f, 1.0f } },
 
-		{ { 0.0f, 0.0f }, { -1.0f, 1.0f, 1.0f }, { 0.0f, 0.0f, 1.0f }, { 1.0f, 0.0f, 0.0f, 1.0f } },
+		{ { 0.0f, 0.0f }, { -1.0f, 1.0f, 1.0f }, { 0.0f, 0.0f, 1.0f }, { 0.0f, 1.0f, 0.0f, 1.0f } },
 		{ { 1.0f, 0.0f }, { 1.0f, 1.0f, 1.0f }, { 0.0f, 0.0f, 1.0f }, { 1.0f, 0.0f, 0.0f, 1.0f } },
-		{ { 1.0f, 1.0f }, { 1.0f, -1.0f, 1.0f }, { 0.0f, 0.0f, 1.0f }, { 1.0f, 0.0f, 0.0f, 1.0f } },
-		{ { 0.0f, 1.0f }, { -1.0f, -1.0f, 1.0f }, { 0.0f, 0.0f, 1.0f }, { 1.0f, 0.0f, 0.0f, 1.0f } }
+		{ { 1.0f, 1.0f }, { 1.0f, -1.0f, 1.0f }, { 0.0f, 0.0f, 1.0f }, { 1.0f, 1.0f, 0.0f, 1.0f } },
+		{ { 0.0f, 1.0f }, { -1.0f, -1.0f, 1.0f }, { 0.0f, 0.0f, 1.0f }, { 0.0f, 0.0f, 1.0f, 1.0f } }
 	};
 
 	unsigned int ballIndicies[36] =
@@ -854,6 +857,13 @@ DEMO_APP::DEMO_APP(HINSTANCE hinst, WNDPROC proc)
 	MSAAEnabledStateDesc.CullMode = D3D11_CULL_BACK;
 	MSAAEnabledStateDesc.MultisampleEnable = true;
 	device->CreateRasterizerState(&MSAAEnabledStateDesc, &MSAAEnabled);
+
+	D3D11_RASTERIZER_DESC FrontFaceCullingStateDesc;
+	ZeroMemory(&FrontFaceCullingStateDesc, sizeof(D3D11_RASTERIZER_DESC));
+	FrontFaceCullingStateDesc.FillMode = D3D11_FILL_SOLID;
+	FrontFaceCullingStateDesc.CullMode = D3D11_CULL_FRONT;
+	FrontFaceCullingStateDesc.MultisampleEnable = true;
+	device->CreateRasterizerState(&FrontFaceCullingStateDesc, &FrontFaceCulling);
 
 	D3D11_BUFFER_DESC cameraSceneShaderBufferDesc;
 	ZeroMemory(&cameraSceneShaderBufferDesc, sizeof(D3D11_BUFFER_DESC));
@@ -1080,7 +1090,7 @@ bool DEMO_APP::Run()
 			viewX += (float)timer.Delta() * multiplier;
 		if (GetAsyncKeyState(VK_SPACE))
 			viewY += (float)timer.Delta() * multiplier;
-		if (GetAsyncKeyState(VK_LCONTROL))
+		if (GetAsyncKeyState('C'))
 			viewY -= (float)timer.Delta() * multiplier;
 		if (GetAsyncKeyState('I'))
 			ToLight[1].pos.z += (float)timer.Delta() * 3.0f;
@@ -1231,6 +1241,8 @@ bool DEMO_APP::Run()
 
 	deviceContext->RSSetViewports(1, &viewport);
 
+	deviceContext->RSSetState(MSAAEnabled);
+
 	//////////////////// v PORTAL ONE VIEW v ///////////////////
 	deviceContext->OMSetRenderTargets(1, &portal1RenderTargetView, depthStencilView);
 	deviceContext->ClearRenderTargetView(portal1RenderTargetView, blue);
@@ -1256,7 +1268,9 @@ bool DEMO_APP::Run()
 	star.Draw(deviceContext, starObjectShaderBuffer, starToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 60, 0);
 	// Rock
 	deviceContext->PSSetShaderResources(0, 1, &rockShaderResourceView);
+	deviceContext->RSSetState(FrontFaceCulling);
 	rock.Draw(deviceContext, rockObjectShaderBuffer, rockToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 18417, 0);
+	deviceContext->RSSetState(MSAAEnabled);
 	// Ball Pit
 	deviceContext->CSSetShader(ComputeShader, NULL, 0);
 	for (int j = 0; j < 25; j++)
@@ -1272,7 +1286,9 @@ bool DEMO_APP::Run()
 	}
 	// Flashlight
 	deviceContext->PSSetShaderResources(0, 1, &flashlightShaderResourceView);
+	deviceContext->RSSetState(FrontFaceCulling);
 	flashlight.Draw(deviceContext, flashlightObjectShaderBuffer, flashlightToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 12351, 0);
+	deviceContext->RSSetState(MSAAEnabled);
 	//////////////////// ^ PORTAL ONE VIEW ^ ///////////////////
 
 	////////////////// v PORTAL TWO VIEW v ///////////////////
@@ -1300,7 +1316,9 @@ bool DEMO_APP::Run()
 	star.Draw(deviceContext, starObjectShaderBuffer, starToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 60, 0);
 	// Rock
 	deviceContext->PSSetShaderResources(0, 1, &rockShaderResourceView);
+	deviceContext->RSSetState(FrontFaceCulling);
 	rock.Draw(deviceContext, rockObjectShaderBuffer, rockToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 18417, 0);
+	deviceContext->RSSetState(MSAAEnabled);
 	// Ball Pit
 	deviceContext->CSSetShader(ComputeShader, NULL, 0);
 	for (int j = 0; j < 25; j++)
@@ -1316,7 +1334,9 @@ bool DEMO_APP::Run()
 	}
 	// Flashlight
 	deviceContext->PSSetShaderResources(0, 1, &flashlightShaderResourceView);
+	deviceContext->RSSetState(FrontFaceCulling);
 	flashlight.Draw(deviceContext, flashlightObjectShaderBuffer, flashlightToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 12351, 0);
+	deviceContext->RSSetState(MSAAEnabled);
 	////////////////// ^ PORTAL TWO VIEW ^ ///////////////////
 
 	deviceContext->OMSetRenderTargets(1, &renderTargetView, depthStencilView);
@@ -1329,7 +1349,7 @@ bool DEMO_APP::Run()
 	deviceContext->Unmap(cameraSceneShaderBuffer, NULL);
 	deviceContext->VSSetConstantBuffers(1, 1, &cameraSceneShaderBuffer);
 
-	deviceContext->RSSetState(MSAAEnabled);
+	//deviceContext->RSSetState(MSAAEnabled);
 	//////////////////// v SKYBOX DRAW v ////////////////////
 	skyboxToObject.localMatrix.r[3].m128_f32[0] = X;
 	skyboxToObject.localMatrix.r[3].m128_f32[1] = Y;
@@ -1352,7 +1372,9 @@ bool DEMO_APP::Run()
 
 	//////////////////// v ROCK DRAW v ///////////////////
 	deviceContext->PSSetShaderResources(0, 1, &rockShaderResourceView);
+	deviceContext->RSSetState(FrontFaceCulling);
 	rock.Draw(deviceContext, rockObjectShaderBuffer, rockToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 18417, 0);
+	deviceContext->RSSetState(MSAAEnabled);
 	//////////////////// ^ ROCK DRAW ^ ///////////////////
 
 	//////////////////// v BALL PIT DRAW v ///////////////////
@@ -1389,7 +1411,9 @@ bool DEMO_APP::Run()
 	//////////////////// v FLASHLIGHT DRAW v ///////////////////
 	deviceContext->ClearDepthStencilView(depthStencilView, D3D11_CLEAR_DEPTH, 1.0f, NULL);
 	deviceContext->PSSetShaderResources(0, 1, &flashlightShaderResourceView);
+	deviceContext->RSSetState(FrontFaceCulling);
 	flashlight.Draw(deviceContext, flashlightObjectShaderBuffer, flashlightToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 12351, 0);
+	deviceContext->RSSetState(MSAAEnabled);
 	//////////////////// ^ FLASHLIGHT DRAW ^ ///////////////////
 
 	//////////////////// v MINIMAP v ///////////////////
@@ -1415,7 +1439,9 @@ bool DEMO_APP::Run()
 	star.Draw(deviceContext, starObjectShaderBuffer, starToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 60, 0);
 	// Rock
 	deviceContext->PSSetShaderResources(0, 1, &rockShaderResourceView);
+	deviceContext->RSSetState(FrontFaceCulling);
 	rock.Draw(deviceContext, rockObjectShaderBuffer, rockToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 18417, 0);
+	deviceContext->RSSetState(MSAAEnabled);
 	// Ball Pit
 	deviceContext->CSSetShader(ComputeShader, NULL, 0);
 	for (int j = 0; j < 25; j++)
@@ -1442,7 +1468,9 @@ bool DEMO_APP::Run()
 	//deviceContext->OMSetDepthStencilState(NULL, 0);
 	// Flashlight
 	deviceContext->PSSetShaderResources(0, 1, &flashlightShaderResourceView);
+	deviceContext->RSSetState(FrontFaceCulling);
 	flashlight.Draw(deviceContext, flashlightObjectShaderBuffer, flashlightToObject, ToLightBuffer, ToLight, nullptr, particle(), sizeof(VERTEX), 0, 12351, 0);
+	deviceContext->RSSetState(MSAAEnabled);
 	//////////////////// ^ MINIMAP ^ ///////////////////
 
 	swapchain->Present(0, 0);
@@ -1532,6 +1560,8 @@ bool DEMO_APP::ShutDown()
 		samplerState->Release();
 	if (MSAAEnabled != nullptr)
 		MSAAEnabled->Release();
+	if (FrontFaceCulling != nullptr)
+		FrontFaceCulling->Release();
 
 	UnregisterClass( L"DirectXApplication", application ); 
 	return true;
@@ -1541,8 +1571,7 @@ bool DEMO_APP::ShutDown()
 //************ WINDOWS RELATED *******************************
 //************************************************************
 
-// ****************** BEGIN WARNING ***********************// 
-// WINDOWS CODE, I DON'T TEACH THIS YOU MUST KNOW IT ALREADY!
+// ****************** BEGIN WARNING ***********************//
 
 int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCmdLine,	int nCmdShow );						   
 LRESULT CALLBACK WndProc(HWND hWnd,	UINT message, WPARAM wparam, LPARAM lparam );		
