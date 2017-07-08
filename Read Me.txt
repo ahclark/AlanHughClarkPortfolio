@@ -7,5 +7,5 @@ Inside each folder you will find some of the following:
 - Video explaining what I worked on and description of the project.
 - A text document describing relevant information about the project, its controls, and software used
 
-Please note that if you do not find some of these items in the folder, it is either in development or is not applicable to the type of project.
+Please note that if you do not find some of these items in the folder, it is either in development or is not applicable to the project.
 If you have any questions or would otherwise like to contact me, please email me at alanhughclark@outlook.com
