@@ -25,16 +25,16 @@ Time Taken:
 Features:
  - 3D Rendering of Textured Models
  - Camera Translation and Rotation - See Controls
- - Render to Texture - Used for Portals
+ - Render to Texture - Used for Portal views
  - Stencil Buffer - Used to avoid z-fighting on the Portals against the gray wall
  - Infinite Sky Box - Always visible. Doesn’t translate with camera movement
  - Directional Light - White light pointing diagonally down and forward
- - Point Light - Red light in the center of the stage. Can be moved. See Controls
- - Spot Light - Blue light pointing forward moving with the camera’s position
+ - Point Light - Red light in the center of the stage. Can be moved. (See Controls)
+ - Spot Light - Blue light pointing forward, moving with the camera’s position and orientation
  - OBJ File Loading - Rocks and Flashlight
  - Geometry Instancing - Multiple Rocks with one draw call
- - Vertex-based Color Mapping - Used to color the Star
- - Compute Shader - Used for the particle physics in the Red Box Fountain
- - 4x Multisample Anti-Aliasing (MSAA) - Applied to all drawn geometry and the Portal’s Textures
- - Dynamic Window Resizing - All scene variables and buffers updated accordingly
+ - Vertex-based Color Mapping - Used to color the Star and Rainbow Boxes
+ - Compute Shader - Used for the particle physics in the Rainbow Box Fountain
+ - 4x Multisample Anti-Aliasing (MSAA) - Applied to all drawn geometry and the Portal views
+ - Dynamic Window Resizing - All scene variables and buffers updated accordingly when resizing to any aspect ratio
  - Multiple Viewport Scenes - Used to render the Minimap in the top left corner
