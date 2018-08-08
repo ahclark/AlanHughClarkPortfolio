@@ -3,9 +3,9 @@ In each of these folders you will find some of the projects I have worked on for
 
 Inside each folder you will find some of the following:
 	- Project folder containing the source code
-	- Folder containing an executable in the case there is a problem with building the project on your machine
-	- A text document describing relevant information about the project, its controls, and software used
+	- Folder containing an executable
+	- "Info.txt" Text document describing relevant information about the project, its controls, and software used
 
-Please note that if you do not find some of these items in the folder, it is either in development or is not applicable to the project.
+Please note that if you do not find some of these items in the folder, it is either in development or is not available for that specific project.
 
 If you have any questions or would otherwise like to contact me, please email me at alanhughclark@outlook.com

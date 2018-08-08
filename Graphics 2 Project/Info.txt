@@ -11,7 +11,7 @@ Software Used:
 
 Controls:
  - Quick Exit - Esc
-**Press (TAB) to toggle the following**
+** Press (TAB) to toggle the following **
  - Camera Movement - WASD
  - Camera Up -  Space
  - Camera Down - Left Ctrl

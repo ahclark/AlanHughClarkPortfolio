@@ -1,0 +1,36 @@
+Title: The Legendary Blacksmith
+
+Description:
+This is a copy of my Final Project for Full Sail University as it existed on the last day of grading.
+This game was created for the HTC Vive platform. The goal is to fill the role of town blacksmith and create weapons for your army.
+Every weapon you create, when turned in to the correct vendor, spawns an army unit to fight against the enemy blacksmith.
+
+Software Used:
+ - Windows 10 (64-bit)
+ - Unity Game Engine
+ - Visual Studios 2015
+ - SteamVR Plugin
+
+Controls:
+** HTC Vive controllers **
+ - Grab/Interact - Trigger
+ - Teleport - Left Touchpad
+ - Radial Menu - Right Touchpad
+ - Drop Item (When applicable) - Grip Button
+** Keyboard controls if a headset is not connected **
+ - Camera Movement - WASD/Arrow keys
+ - Look Around - Right mouse click
+ - Grab/Interact - Left mouse click
+ - Sprint - Left Shift
+
+Time Taken:
+5 Months
+
+Special Instructions:
+You spawn in the main menu room. Here you can practice your interactions with some of the objects on the tables around the room.
+You can try picking these objects up and touching them together to make one of the completed objects (sword, shield, or arrow).
+Up the stairs you will see goblins interacting with various machines. These will be the machines you will interact with as the blacksmith.
+Paying attention to how each of these machines are used will help you in the game. When you are ready to jump in, 
+place the "blacksmith's smock" (the object featuring the game logo and located in front of the middle table) around your neck.
+Once you load in, a voice will guide you through making the required items. When your item is made,
+turn it in to the vendors located by your blacksmith's shop to create an army unit and watch as they run into battle!
