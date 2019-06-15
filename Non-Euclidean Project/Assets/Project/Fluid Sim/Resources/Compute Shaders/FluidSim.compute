@@ -1,0 +1,54 @@
+﻿// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel FluidSim
+
+// Particle's data
+struct Particle
+{
+	float density;
+	float temperature;
+	float3 position;
+	float3 velocity;
+};
+
+struct Voxel
+{
+	int numParticles;
+	float3 positiveBound;
+	float3 negativeBound;
+};
+
+RWStructuredBuffer<Particle> particleBuffer;
+RWStructuredBuffer<Voxel> voxelBuffer;
+
+// Variables set from the CPU
+int numVoxels;
+int numVoxelsX;
+int numVoxelsY;
+int numVoxelsZ;
+float deltaTime;
+float voxelSize;
+float3 mousePosition;
+float3 positiveBound;
+
+[numthreads(1, 1, 1)]
+void FluidSim(uint3 id : SV_DispatchThreadID)
+{
+	float3 delta = mousePosition - particleBuffer[id.x].position;
+	float3 dir = normalize(delta);
+	float sqlength = delta.x * delta.x + delta.y * delta.y + delta.z * delta.z;
+	
+	particleBuffer[id.x].velocity += 0.1f * sqlength * dir;
+	particleBuffer[id.x].position += particleBuffer[id.x].velocity * deltaTime * 0.1;
+
+	int indexX, indexY, indexZ;
+	float diffX, diffY, diffZ;
+	diffX = abs(particleBuffer[id.x].position.x - positiveBound.x);
+	indexX = (int)(diffX / voxelSize);
+	diffY = abs(particleBuffer[id.x].position.y - positiveBound.y);
+	indexY = (int)(diffY / voxelSize);
+	diffZ = abs(particleBuffer[id.x].position.z - positiveBound.z);
+	indexZ = (int)(diffZ / voxelSize);
+
+	if (indexX < numVoxelsX && indexY < numVoxelsY && indexZ < numVoxelsZ)
+		voxelBuffer[(indexX * numVoxelsY * numVoxelsZ) + (indexY * numVoxelsZ) + indexZ].numParticles++;
+}

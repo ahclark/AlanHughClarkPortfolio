@@ -1,0 +1,62 @@
+﻿// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel Voxels
+
+struct Particle
+{
+	float3 position;
+	float3 velocity;
+};
+
+struct Voxel
+{
+	int numParticles;
+	float3 positiveBound;
+	float3 negativeBound;
+};
+
+StructuredBuffer<Particle> particleBuffer;
+RWStructuredBuffer<Voxel> voxelBuffer;
+
+RWTexture2DArray<float4> voxelTextures; //: register(u0); // UAV
+
+// Variables set from the CPU
+int numVoxles;
+
+float sdBox(float3 position, float3 boxSize)
+{
+	float3 d = abs(position) - boxSize;
+	return min(max(d.x, max(d.y, d.z)), 0.0) + length(max(d, 0.0));
+}
+
+[numthreads(256,1,1)]
+void Voxels(uint3 id : SV_DispatchThreadID)
+{
+	//uint width, height, elements;
+	//voxelTextures.GetDimensions(width, height, elements);
+
+	for (int i = 0; i < numVoxles; i++)
+	{
+		//float3 size;
+		//size.x = abs(voxelBuffer[i].positiveBound.x - voxelBuffer[i].negativeBound.x);
+		//size.y = abs(voxelBuffer[i].positiveBound.y - voxelBuffer[i].negativeBound.y);
+		//size.z = abs(voxelBuffer[i].positiveBound.z - voxelBuffer[i].negativeBound.z);
+
+		//if (sdBox(particleBuffer[id.x].position, size) < 0)
+		if (particleBuffer[id.x].position.x < voxelBuffer[i].positiveBound.x && particleBuffer[id.x].position.x > voxelBuffer[i].negativeBound.x &&
+			particleBuffer[id.x].position.y < voxelBuffer[i].positiveBound.y && particleBuffer[id.x].position.y > voxelBuffer[i].negativeBound.y &&
+			particleBuffer[id.x].position.z < voxelBuffer[i].positiveBound.z && particleBuffer[id.x].position.z > voxelBuffer[i].negativeBound.z)
+		{
+			uint3 index;
+			index.x = 0;
+			index.y = voxelBuffer[i].numParticles;
+			index.z = i;
+
+			voxelBuffer[i].numParticles++;
+
+			voxelTextures[index] = float4(	particleBuffer[id.x].position.x,
+											particleBuffer[id.x].position.y,
+											particleBuffer[id.x].position.z,
+											1.0);
+		}
+	}
+}

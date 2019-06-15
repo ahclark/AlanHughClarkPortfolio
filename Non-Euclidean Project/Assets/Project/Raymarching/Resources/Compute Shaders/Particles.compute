@@ -1,0 +1,57 @@
+﻿// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel Particles
+
+// Particle's data
+struct Particle
+{
+	float3 position;
+	float3 velocity;
+};
+
+struct Voxel
+{
+	int numParticles;
+	float3 positiveBound;
+	float3 negativeBound;
+};
+
+RWStructuredBuffer<Particle> particleBuffer;
+RWStructuredBuffer<Voxel> voxelBuffer;
+
+RWTexture2DArray<float4> voxelTextures;
+
+// Variables set from the CPU
+int numVoxles;
+float deltaTime;
+float3 mousePosition;
+
+[numthreads(256,1,1)]
+void Particles(uint3 id : SV_DispatchThreadID)
+{
+	float3 delta = mousePosition - particleBuffer[id.x].position;
+	float3 dir = normalize(delta);
+	float sqlength = delta.x * delta.x + delta.y * delta.y + delta.z * delta.z;
+
+	particleBuffer[id.x].velocity += 0.1f * sqlength * dir;
+	particleBuffer[id.x].position += particleBuffer[id.x].velocity * deltaTime;
+
+	//for (int i = 0; i < numVoxles; i++)
+	//{
+	//	if (particleBuffer[id.x].position.x < voxelBuffer[i].positiveBound.x && particleBuffer[id.x].position.x > voxelBuffer[i].negativeBound.x &&
+	//		particleBuffer[id.x].position.y < voxelBuffer[i].positiveBound.y && particleBuffer[id.x].position.y > voxelBuffer[i].negativeBound.y &&
+	//		particleBuffer[id.x].position.z < voxelBuffer[i].positiveBound.z && particleBuffer[id.x].position.z > voxelBuffer[i].negativeBound.z)
+	//	{
+	//		uint3 index;
+	//		index.x = 0;
+	//		index.y = voxelBuffer[i].numParticles;
+	//		index.z = i;
+	//
+	//		voxelBuffer[i].numParticles++;
+	//
+	//		voxelTextures[index] = float4(	particleBuffer[id.x].position.x,
+	//										particleBuffer[id.x].position.y,
+	//										particleBuffer[id.x].position.z,
+	//										1.0);
+	//	}
+	//}
+}
