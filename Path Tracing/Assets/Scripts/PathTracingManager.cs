@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-[ExecuteInEditMode]
 [RequireComponent(typeof(Camera))]
 [AddComponentMenu("Path Tracing/PathTracingManager")]
 public class PathTracingManager : MonoBehaviour
 {
     public Light DirectionalLight;
+    public int SphereSeed;
     public Vector2 SphereRadius = new Vector2(3.0f, 8.0f);
     public uint SpheresMax = 100;
     public float SpherePlacementRadius = 100.0f;
@@ -15,6 +15,7 @@ public class PathTracingManager : MonoBehaviour
     private uint m_currentSample = 0;
     private Camera m_camera;
     private RenderTexture m_target;
+    private RenderTexture m_converged;
     private ComputeBuffer m_sphereBuffer;
 
     [SerializeField]
@@ -27,7 +28,7 @@ public class PathTracingManager : MonoBehaviour
             if (null == _ComputeShader && null != m_computeShader)
             {
                 _ComputeShader = Resources.Load<ComputeShader>("Compute Shaders/PathTracing");
-                _ComputeShader.hideFlags = HideFlags.HideAndDontSave;
+                //_ComputeShader.hideFlags = HideFlags.HideAndDontSave;
             }
 
             return _ComputeShader;
@@ -44,7 +45,7 @@ public class PathTracingManager : MonoBehaviour
             if (null == _PostProcessingMaterial && null != m_postProcessingShader)
             {
                 _PostProcessingMaterial = new Material(m_postProcessingShader);
-                _PostProcessingMaterial.hideFlags = HideFlags.HideAndDontSave;
+                //_PostProcessingMaterial.hideFlags = HideFlags.HideAndDontSave;
             }
 
             return _PostProcessingMaterial;
@@ -55,9 +56,11 @@ public class PathTracingManager : MonoBehaviour
     struct Sphere
     {
         public float radius;
+        public float smoothness;
         public Vector3 position;
         public Vector3 albedo;
         public Vector3 specular;
+        public Vector3 emission;
     };
 
     private void OnEnable()
@@ -121,7 +124,8 @@ public class PathTracingManager : MonoBehaviour
         PostProcessingMaterial.SetFloat("_Sample", m_currentSample);
 
         // Blit the result texture to the screen
-        Graphics.Blit(m_target, destination, PostProcessingMaterial);
+        Graphics.Blit(m_target, m_converged, PostProcessingMaterial);
+        Graphics.Blit(m_converged, destination);
 
         // Update post processing sample
         m_currentSample++;
@@ -130,21 +134,32 @@ public class PathTracingManager : MonoBehaviour
     private void InitRenderTexture()
     {
         // If a target render texture hasn't been set
+        // OR If a converged render texture hasn't been set
         // OR If the screen's width does not match the target render texture's width
         // OR If the screen's height does not match the target render texture's height
-        if (null == m_target || Screen.width != m_target.width || Screen.height != m_target.height)
+        if (null == m_target || null == m_converged || Screen.width != m_target.width || Screen.height != m_target.height)
         {
             // If we already have a target render texture, but the width or height doesn't match
             if (null != m_target)
             {
-                // Release the current render texture
+                // Release the current target render texture
                 m_target.Release();
             }
-
             // Create a new target render texture
             m_target = new RenderTexture(Screen.width, Screen.height, 0, RenderTextureFormat.ARGBFloat, RenderTextureReadWrite.Linear);
             m_target.enableRandomWrite = true;
             m_target.Create();
+
+            // If we already have a converged render texture, but the width or height doesn't match
+            if (null != m_converged)
+            {
+                // Release the current converged render texture
+                m_converged.Release();
+            }
+            // Create a new converged render texture
+            m_converged = new RenderTexture(Screen.width, Screen.height, 0, RenderTextureFormat.ARGBFloat, RenderTextureReadWrite.Linear);
+            m_converged.enableRandomWrite = true;
+            m_converged.Create();
 
             // Reset post processing sample
             m_currentSample = 0;
@@ -166,10 +181,14 @@ public class PathTracingManager : MonoBehaviour
         ComputeShader.SetVector("_DirectionalLight", new Vector4(l.x, l.y, l.z, DirectionalLight.intensity));
 
         ComputeShader.SetBuffer(m_kernelID, "_Spheres", m_sphereBuffer);
+
+        ComputeShader.SetFloat("_Seed", Random.value);
     }
 
     private void SetUpScene()
     {
+        Random.InitState(SphereSeed);
+
         List<Sphere> spheres = new List<Sphere>();
         // Add a number of random spheres
         for (int i = 0; i < SpheresMax; i++)
@@ -186,18 +205,31 @@ public class PathTracingManager : MonoBehaviour
                 if (Vector3.SqrMagnitude(sphere.position - other.position) < minDist * minDist)
                     goto SkipSphere;
             }
+
             // Albedo and specular color
             Color color = Random.ColorHSV();
-            bool metal = Random.value < 0.5f;
-            sphere.albedo = metal ? Vector3.zero : new Vector3(color.r, color.g, color.b);
-            sphere.specular = metal ? new Vector3(color.r, color.g, color.b) : Vector3.one * 0.04f;
+            float chance = Random.value;
+            if (chance < 0.8f)
+            {
+                bool metal = chance < 0.4f;
+                sphere.albedo = metal ? Vector3.zero : new Vector3(color.r, color.g, color.b);
+                sphere.specular = metal ? new Vector3(color.r, color.g, color.b) : Vector3.one * 0.04f;
+                sphere.smoothness = Random.value;
+            }
+            else
+            {
+                Color emission = Random.ColorHSV(0.0f, 1.0f, 0.0f, 1.0f, 3.0f, 8.0f);
+                sphere.albedo = Vector3.one;
+                sphere.emission = new Vector3(emission.r, emission.g, emission.b);
+            }
+
             // Add the sphere to the list
             spheres.Add(sphere);
             SkipSphere:
             continue;
         }
         // Assign to compute buffer
-        m_sphereBuffer = new ComputeBuffer(spheres.Count, 40);
+        m_sphereBuffer = new ComputeBuffer(spheres.Count, 56);
         m_sphereBuffer.SetData(spheres);
     }
 }

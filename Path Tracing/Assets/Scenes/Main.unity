@@ -226,37 +226,37 @@ PrefabInstance:
     - target: {fileID: 7687097227040868048, guid: bfc078acd0029f140b33e9cec6635612,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.5
+      value: -73.78006
       objectReference: {fileID: 0}
     - target: {fileID: 7687097227040868048, guid: bfc078acd0029f140b33e9cec6635612,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.5
+      value: 84.442154
       objectReference: {fileID: 0}
     - target: {fileID: 7687097227040868048, guid: bfc078acd0029f140b33e9cec6635612,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.5
+      value: 115.299286
       objectReference: {fileID: 0}
     - target: {fileID: 7687097227040868048, guid: bfc078acd0029f140b33e9cec6635612,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.23911765
+      value: -0.09405192
       objectReference: {fileID: 0}
     - target: {fileID: 7687097227040868048, guid: bfc078acd0029f140b33e9cec6635612,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.3696438
+      value: -0.9002397
       objectReference: {fileID: 0}
     - target: {fileID: 7687097227040868048, guid: bfc078acd0029f140b33e9cec6635612,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.09904577
+      value: 0.3491788
       objectReference: {fileID: 0}
     - target: {fileID: 7687097227040868048, guid: bfc078acd0029f140b33e9cec6635612,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.89239913
+      value: -0.24248075
       objectReference: {fileID: 0}
     - target: {fileID: 7687097227040868048, guid: bfc078acd0029f140b33e9cec6635612,
         type: 3}
@@ -283,6 +283,31 @@ PrefabInstance:
       propertyPath: DirectionalLight
       value: 
       objectReference: {fileID: 1406583726}
+    - target: {fileID: 3739777718448925340, guid: bfc078acd0029f140b33e9cec6635612,
+        type: 3}
+      propertyPath: SphereSeed
+      value: 1223832719
+      objectReference: {fileID: 0}
+    - target: {fileID: 3739777718448925340, guid: bfc078acd0029f140b33e9cec6635612,
+        type: 3}
+      propertyPath: SphereRadius.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3739777718448925340, guid: bfc078acd0029f140b33e9cec6635612,
+        type: 3}
+      propertyPath: SphereRadius.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3739777718448925340, guid: bfc078acd0029f140b33e9cec6635612,
+        type: 3}
+      propertyPath: SpheresMax
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3739777718448925340, guid: bfc078acd0029f140b33e9cec6635612,
+        type: 3}
+      propertyPath: SpherePlacementRadius
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7687097227040868055, guid: bfc078acd0029f140b33e9cec6635612, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bfc078acd0029f140b33e9cec6635612, type: 3}
