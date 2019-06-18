@@ -2,6 +2,8 @@
 
 public class SimpleCameraController : MonoBehaviour
 {
+    public float Speed = 1.5f;
+
     private CharacterController m_characterController;
     private void Start()
     {
@@ -28,7 +30,7 @@ public class SimpleCameraController : MonoBehaviour
 
         if (null != m_characterController)
         {
-            m_characterController.Move(moveResult);
+            m_characterController.Move(moveResult * Speed * Time.deltaTime);
         }
 
         Vector2 lookResult = new Vector2(0.0f, 0.0f);

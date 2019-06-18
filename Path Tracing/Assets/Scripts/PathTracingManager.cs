@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(Camera))]
@@ -10,13 +11,36 @@ public class PathTracingManager : MonoBehaviour
     public Vector2 SphereRadius = new Vector2(3.0f, 8.0f);
     public uint SpheresMax = 100;
     public float SpherePlacementRadius = 100.0f;
+    public bool PassesStartLocked = false;
+    // Value of 0 means unlimited
+    public uint MaxPasses = 1;
 
+    private bool m_passLocked = false;
     private int m_kernelID;
+    private uint m_numPasses = 0;
     private uint m_currentSample = 0;
+    private float m_renderTime = 0.0f;
+    private string m_passLockText;
+    private Rect m_buttonNumPassRect;
+    private Rect m_buttonPassLockRect;
+    private Rect m_labelMaxPassRect;
+    private Rect m_fieldMaxPassRect;
+    private Rect m_labelTimerRect;
     private Camera m_camera;
     private RenderTexture m_target;
     private RenderTexture m_converged;
     private ComputeBuffer m_sphereBuffer;
+    private ComputeBuffer m_meshObjectBuffer;
+    private ComputeBuffer m_vertexBuffer;
+    private ComputeBuffer m_indexBuffer;
+    private ComputeBuffer m_normalBuffer;
+
+    private static bool m_meshObjectsNeedRebuilding = false;
+    private static List<PathTracingObject> m_pathTracingObjects = new List<PathTracingObject>();
+    private static List<MeshObject> m_meshObjects = new List<MeshObject>();
+    private static List<Vector3> m_vertices = new List<Vector3>();
+    private static List<int> m_indices = new List<int>();
+    private static List<Vector3> m_normals = new List<Vector3>();
 
     [SerializeField]
     // TODO: Is this redundant? (Two ComputeShader variables)
@@ -63,16 +87,15 @@ public class PathTracingManager : MonoBehaviour
         public Vector3 emission;
     };
 
-    private void OnEnable()
+    struct MeshObject
     {
-        m_currentSample = 0;
-        SetUpScene();
-    }
-
-    private void OnDisable()
-    {
-        if (m_sphereBuffer != null)
-            m_sphereBuffer.Release();
+        public Matrix4x4 localToWorldMatrix;
+        public int indices_offset;
+        public int indices_count;
+        public float smoothness;
+        public Vector3 albedo;
+        public Vector3 specular;
+        public Vector3 emission;
     }
 
     private void Awake()
@@ -82,6 +105,38 @@ public class PathTracingManager : MonoBehaviour
 
         // Find the id of our compute shader's kernel
         m_kernelID = ComputeShader.FindKernel("PathTracing");
+
+        float buffer = 5.0f;
+        m_buttonPassLockRect = new Rect(10, 10, 150, 25);
+        m_buttonNumPassRect = new Rect(m_buttonPassLockRect.x, m_buttonPassLockRect.yMax + buffer, m_buttonPassLockRect.width, m_buttonPassLockRect.height);
+        m_labelMaxPassRect = new Rect(m_buttonPassLockRect.x, m_buttonNumPassRect.yMax + buffer, 77, m_buttonPassLockRect.height);
+        m_fieldMaxPassRect = new Rect(m_labelMaxPassRect.xMax + buffer, m_labelMaxPassRect.y,
+            m_buttonPassLockRect.width - m_labelMaxPassRect.width - buffer, m_buttonPassLockRect.height);
+        m_labelTimerRect = new Rect(m_buttonPassLockRect.x, m_fieldMaxPassRect.yMax + buffer, m_buttonPassLockRect.width, m_buttonPassLockRect.height);
+    }
+
+    private void OnEnable()
+    {
+        m_currentSample = 0;
+        m_numPasses = 0;
+        m_renderTime = 0.0f;
+        m_meshObjectsNeedRebuilding = true;
+        SetUpPassLock(PassesStartLocked);
+        SetUpScene();
+    }
+
+    private void OnDisable()
+    {
+        if (m_sphereBuffer != null)
+            m_sphereBuffer.Release();
+        if (m_meshObjectBuffer != null)
+            m_meshObjectBuffer.Release();
+        if (m_vertexBuffer != null)
+            m_vertexBuffer.Release();
+        if (m_indexBuffer != null)
+            m_indexBuffer.Release();
+        if (m_normalBuffer != null)
+            m_normalBuffer.Release();
     }
 
     private void Update()
@@ -92,20 +147,118 @@ public class PathTracingManager : MonoBehaviour
 
             // Reset post processing sample
             m_currentSample = 0;
+
+            // Reset number of passes
+            m_numPasses = 0;
+
+            // Reset render timer
+            m_renderTime = 0.0f;
         }
         if (true == DirectionalLight.transform.hasChanged)
-
         {
             DirectionalLight.transform.hasChanged = false;
 
             // Reset post processing sample
             m_currentSample = 0;
+
+            // Reset number of passes
+            m_numPasses = 0;
+
+            // Reset render timer
+            m_renderTime = 0.0f;
+        }
+        if (true == m_meshObjectsNeedRebuilding)
+        {
+            // Reset post processing sample
+            m_currentSample = 0;
+
+            // Reset number of passes
+            m_numPasses = 0;
+
+            // Reset render timer
+            m_renderTime = 0.0f;
         }
     }
 
     private void OnRenderImage(RenderTexture source, RenderTexture destination)
     {
-        Render(destination);
+        if (m_numPasses < MaxPasses || false == m_passLocked)
+        {
+            RebuildMeshObjectBuffers();
+
+            Render(destination);
+        }
+        else
+            Graphics.Blit(m_converged, destination);
+    }
+
+    private void OnGUI()
+    {
+        if (GUI.Button(m_buttonPassLockRect, m_passLockText))
+        {
+            TogglePassLock();
+        }
+
+        // Enable the next GUI elements only if passes are locked and the current number of passes has reached the defined maximum
+        GUI.enabled = m_passLocked && m_numPasses == MaxPasses;
+
+        if (GUI.Button(m_buttonNumPassRect, "Passes: " + m_numPasses) && true == m_passLocked)
+        {
+            MaxPasses++;
+        }
+
+        // Enable all GUI elements again after previous check
+        GUI.enabled = true;
+
+        GUI.Label(m_labelMaxPassRect, "Max Passes: ");
+        MaxPasses = uint.Parse(GUI.TextField(m_fieldMaxPassRect, MaxPasses.ToString()));
+
+        GUI.Label(m_labelTimerRect, "Time: " + (int)(m_renderTime * 1000) + "ms (" + ((int)(1/m_renderTime)) + " fps)");
+    }
+
+    public static void RegisterObject(PathTracingObject obj)
+    {
+        m_pathTracingObjects.Add(obj);
+        m_meshObjectsNeedRebuilding = true;
+    }
+
+    public static void UnregisterObject(PathTracingObject obj)
+    {
+        m_pathTracingObjects.Remove(obj);
+        m_meshObjectsNeedRebuilding = true;
+    }
+
+    public static void RebuildObjects()
+    {
+        m_meshObjectsNeedRebuilding = true;
+    }
+
+    private void SetUpPassLock(bool _startLocked)
+    {
+        m_passLocked = _startLocked;
+
+        if (true == _startLocked)
+        {
+            m_passLockText = "Unlock";
+        }
+        else
+        {
+            m_passLockText = "Lock";
+        }
+    }
+
+    private void TogglePassLock()
+    {
+        m_passLocked = !m_passLocked;
+
+        if (true == m_passLocked)
+        {
+            m_passLockText = "Unlock";
+        }
+        else
+        {
+            m_passLockText = "Lock";
+        }
     }
 
     private void Render(RenderTexture destination)
@@ -129,6 +282,12 @@ public class PathTracingManager : MonoBehaviour
 
         // Update post processing sample
         m_currentSample++;
+
+        // Update number of passes
+        m_numPasses++;
+
+        // Update render timer
+        m_renderTime += Time.deltaTime;
     }
 
     private void InitRenderTexture()
@@ -183,6 +342,101 @@ public class PathTracingManager : MonoBehaviour
         ComputeShader.SetBuffer(m_kernelID, "_Spheres", m_sphereBuffer);
 
         ComputeShader.SetFloat("_Seed", Random.value);
+
+        SetComputeBuffer("_Spheres", m_sphereBuffer);
+        SetComputeBuffer("_MeshObjects", m_meshObjectBuffer);
+        SetComputeBuffer("_Vertices", m_vertexBuffer);
+        SetComputeBuffer("_Indices", m_indexBuffer);
+        SetComputeBuffer("_Normals", m_normalBuffer);
+    }
+
+    private void RebuildMeshObjectBuffers()
+    {
+        if (!m_meshObjectsNeedRebuilding)
+        {
+            return;
+        }
+
+        m_meshObjectsNeedRebuilding = false;
+        m_currentSample = 0;
+
+        // Clear all lists
+        m_meshObjects.Clear();
+        m_vertices.Clear();
+        m_indices.Clear();
+        m_normals.Clear();
+
+        // Loop over all objects and gather their data
+        foreach (PathTracingObject obj in m_pathTracingObjects)
+        {
+            Mesh mesh = obj.GetComponent<MeshFilter>().sharedMesh;
+
+            // Add vertex data
+            int firstVertex = m_vertices.Count;
+            m_vertices.AddRange(mesh.vertices);
+
+            // Add index data - if the vertex buffer wasn't empty before, the
+            // indices need to be offset
+            int firstIndex = m_indices.Count;
+            var indices = mesh.GetIndices(0);
+            m_indices.AddRange(indices.Select(index => index + firstVertex));
+
+            int firstNormal = m_normals.Count;
+            m_normals.AddRange(mesh.normals);
+
+            // Add the object itself
+            m_meshObjects.Add(new MeshObject()
+            {
+                localToWorldMatrix = obj.transform.localToWorldMatrix,
+                indices_offset = firstIndex,
+                indices_count = indices.Length,
+                smoothness = obj.Smoothness,
+                albedo = new Vector3(obj.Albedo.r, obj.Albedo.g, obj.Albedo.b),
+                specular = obj.Specular,
+                emission = obj.Emission
+            });
+        }
+
+        CreateComputeBuffer(ref m_meshObjectBuffer, m_meshObjects, 112);
+        CreateComputeBuffer(ref m_vertexBuffer, m_vertices, 12);
+        CreateComputeBuffer(ref m_indexBuffer, m_indices, 4);
+        CreateComputeBuffer(ref m_normalBuffer, m_normals, 12);
+    }
+
+    private static void CreateComputeBuffer<T>(ref ComputeBuffer buffer, List<T> data, int stride)
+    where T : struct
+    {
+        // Do we already have a compute buffer?
+        if (buffer != null)
+        {
+            // If no data or buffer doesn't match the given criteria, release it
+            if (data.Count == 0 || buffer.count != data.Count || buffer.stride != stride)
+            {
+                buffer.Release();
+                buffer = null;
+            }
+        }
+
+        if (data.Count != 0)
+        {
+            // If the buffer has been released or wasn't there to
+            // begin with, create it
+            if (buffer == null)
+            {
+                buffer = new ComputeBuffer(data.Count, stride);
+            }
+
+            // Set data on the buffer
+            buffer.SetData(data);
+        }
+    }
+
+    private void SetComputeBuffer(string name, ComputeBuffer buffer)
+    {
+        if (buffer != null)
+        {
+            ComputeShader.SetBuffer(m_kernelID, name, buffer);
+        }
     }
 
     private void SetUpScene()

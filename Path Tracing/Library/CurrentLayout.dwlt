@@ -20,194 +20,10 @@ MonoBehaviour:
     height: 997
   m_ShowMode: 4
   m_Title: 
-  m_RootView: {fileID: 9}
+  m_RootView: {fileID: 2}
   m_MinSize: {x: 950, y: 684}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Children: []
-  m_Position:
-    serializedVersion: 2
-    x: 0
-    y: 625
-    width: 1119
-    height: 322
-  m_MinSize: {x: 234, y: 272}
-  m_MaxSize: {x: 10004, y: 10022}
-  m_ActualView: {fileID: 21}
-  m_Panes:
-  - {fileID: 21}
-  - {fileID: 25}
-  - {fileID: 17}
-  m_Selected: 0
-  m_LastSelected: 1
---- !u!114 &3
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Children:
-  - {fileID: 12}
-  - {fileID: 2}
-  m_Position:
-    serializedVersion: 2
-    x: 362
-    y: 0
-    width: 1119
-    height: 947
-  m_MinSize: {x: 234, y: 494}
-  m_MaxSize: {x: 10004, y: 14044}
-  vertical: 1
-  controlID: 149
---- !u!114 &4
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Children: []
-  m_Position:
-    serializedVersion: 2
-    x: 0
-    y: 411
-    width: 362
-    height: 536
-  m_MinSize: {x: 362, y: 412}
-  m_MaxSize: {x: 4002, y: 4022}
-  m_ActualView: {fileID: 19}
-  m_Panes:
-  - {fileID: 19}
-  - {fileID: 16}
-  m_Selected: 0
-  m_LastSelected: 1
---- !u!114 &5
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Children:
-  - {fileID: 8}
-  - {fileID: 4}
-  m_Position:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 362
-    height: 947
-  m_MinSize: {x: 362, y: 634}
-  m_MaxSize: {x: 4002, y: 8044}
-  vertical: 1
-  controlID: 178
---- !u!114 &6
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Children:
-  - {fileID: 5}
-  - {fileID: 3}
-  - {fileID: 7}
-  m_Position:
-    serializedVersion: 2
-    x: 0
-    y: 30
-    width: 1920
-    height: 947
-  m_MinSize: {x: 871, y: 634}
-  m_MaxSize: {x: 18006, y: 14044}
-  vertical: 0
-  controlID: 148
---- !u!114 &7
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Children: []
-  m_Position:
-    serializedVersion: 2
-    x: 1481
-    y: 0
-    width: 439
-    height: 947
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 22}
-  m_Panes:
-  - {fileID: 22}
-  - {fileID: 18}
-  m_Selected: 0
-  m_LastSelected: 1
---- !u!114 &8
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Children: []
-  m_Position:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 362
-    height: 411
-  m_MinSize: {x: 202, y: 222}
-  m_MaxSize: {x: 4002, y: 4022}
-  m_ActualView: {fileID: 23}
-  m_Panes:
-  - {fileID: 23}
-  m_Selected: 0
-  m_LastSelected: 0
---- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -220,9 +36,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
-  - {fileID: 10}
-  - {fileID: 6}
-  - {fileID: 11}
+  - {fileID: 3}
+  - {fileID: 5}
+  - {fileID: 4}
   m_Position:
     serializedVersion: 2
     x: 0
@@ -231,7 +47,7 @@ MonoBehaviour:
     height: 997
   m_MinSize: {x: 950, y: 684}
   m_MaxSize: {x: 10000, y: 10000}
---- !u!114 &10
+--- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -253,7 +69,7 @@ MonoBehaviour:
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
   m_LastLoadedLayoutName: 
---- !u!114 &11
+--- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -274,7 +90,136 @@ MonoBehaviour:
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
---- !u!114 &12
+--- !u!114 &5
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 6}
+  - {fileID: 9}
+  - {fileID: 12}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 30
+    width: 1920
+    height: 947
+  m_MinSize: {x: 843, y: 634}
+  m_MaxSize: {x: 12008, y: 8044}
+  vertical: 0
+  controlID: 7395
+--- !u!114 &6
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 7}
+  - {fileID: 8}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 362
+    height: 947
+  m_MinSize: {x: 362, y: 634}
+  m_MaxSize: {x: 4002, y: 8044}
+  vertical: 1
+  controlID: 7418
+--- !u!114 &7
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 362
+    height: 411
+  m_MinSize: {x: 202, y: 222}
+  m_MaxSize: {x: 4002, y: 4022}
+  m_ActualView: {fileID: 14}
+  m_Panes:
+  - {fileID: 14}
+  m_Selected: 0
+  m_LastSelected: 0
+--- !u!114 &8
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 411
+    width: 362
+    height: 536
+  m_MinSize: {x: 362, y: 412}
+  m_MaxSize: {x: 4002, y: 4022}
+  m_ActualView: {fileID: 15}
+  m_Panes:
+  - {fileID: 15}
+  - {fileID: 16}
+  m_Selected: 0
+  m_LastSelected: 1
+--- !u!114 &9
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 10}
+  - {fileID: 11}
+  m_Position:
+    serializedVersion: 2
+    x: 362
+    y: 0
+    width: 1119
+    height: 947
+  m_MinSize: {x: 204, y: 322}
+  m_MaxSize: {x: 4004, y: 8022}
+  vertical: 1
+  controlID: 7396
+--- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -295,15 +240,71 @@ MonoBehaviour:
     height: 625
   m_MinSize: {x: 204, y: 222}
   m_MaxSize: {x: 4004, y: 4022}
-  m_ActualView: {fileID: 24}
+  m_ActualView: {fileID: 17}
   m_Panes:
-  - {fileID: 24}
+  - {fileID: 17}
   - {fileID: 13}
-  - {fileID: 15}
+  - {fileID: 18}
+  - {fileID: 19}
   - {fileID: 20}
-  - {fileID: 14}
+  - {fileID: 21}
   m_Selected: 0
-  m_LastSelected: 2
+  m_LastSelected: 1
+--- !u!114 &11
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 625
+    width: 1119
+    height: 322
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 23}
+  m_Panes:
+  - {fileID: 22}
+  - {fileID: 23}
+  - {fileID: 24}
+  m_Selected: 1
+  m_LastSelected: 0
+--- !u!114 &12
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 1481
+    y: 0
+    width: 439
+    height: 947
+  m_MinSize: {x: 277, y: 72}
+  m_MaxSize: {x: 4002, y: 4022}
+  m_ActualView: {fileID: 25}
+  m_Panes:
+  - {fileID: 25}
+  - {fileID: 26}
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -386,6 +387,297 @@ MonoBehaviour:
   m_LowResolutionForAspectRatios: 01000000000000000000
   m_XRRenderMode: 0
 --- !u!114 &14
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12061, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Hierarchy
+    m_Image: {fileID: -590624980919486359, guid: 0000000000000000d000000000000000,
+      type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 0
+    y: 73
+    width: 362
+    height: 392
+  m_ViewDataDictionary: {fileID: 0}
+  m_SceneHierarchy:
+    m_TreeViewState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 8efbffff
+      m_LastClickedID: -1138
+      m_ExpandedIDs: 8efbffff
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: PathTracingCamera
+        m_OriginalName: PathTracingCamera
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: -1140
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 0
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 7}
+      m_SearchString: 
+    m_ExpandedScenes: []
+    m_CurrenRootInstanceID: 0
+    m_LockTracker:
+      m_IsLocked: 0
+    m_CurrentSortingName: TransformSorting
+  m_WindowGUID: 1394962381dccf6408584d19a7bb3933
+--- !u!114 &15
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12079, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 360, y: 390}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Lighting
+    m_Image: {fileID: 8394858894532624064, guid: 0000000000000000d000000000000000,
+      type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 0
+    y: 484
+    width: 362
+    height: 517
+  m_ViewDataDictionary: {fileID: 0}
+--- !u!114 &16
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12090, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 300, y: 250}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Occlusion
+    m_Image: {fileID: -2243944637213960084, guid: 0000000000000000d000000000000000,
+      type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 0
+    y: 486
+    width: 366
+    height: 514
+  m_ViewDataDictionary: {fileID: 0}
+--- !u!114 &17
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12013, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Scene
+    m_Image: {fileID: 2318424515335265636, guid: 0000000000000000d000000000000000,
+      type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 362
+    y: 73
+    width: 1117
+    height: 606
+  m_ViewDataDictionary: {fileID: 0}
+  m_ShowContextualTools: 0
+  m_WindowGUID: c5180408c8cdf434a8ea86996006923d
+  m_Gizmos: 1
+  m_SceneIsLit: 1
+  m_SceneLighting: 0
+  m_2DMode: 0
+  m_isRotationLocked: 0
+  m_PlayAudio: 0
+  m_AudioPlay: 0
+  m_Position:
+    m_Target: {x: -6.683637, y: -0.6001774, z: 2.8028684}
+    speed: 2
+    m_Value: {x: -6.683637, y: -0.6001774, z: 2.8028684}
+  m_RenderMode: 2
+  m_CameraMode:
+    drawMode: 2
+    name: Shaded Wireframe
+    section: Shading Mode
+  m_ValidateTrueMetals: 0
+  m_DoValidateTrueMetals: 0
+  m_SceneViewState:
+    showFog: 1
+    showMaterialUpdate: 1
+    showSkybox: 1
+    showFlares: 1
+    showImageEffects: 1
+    showParticleSystems: 1
+  grid:
+    xGrid:
+      m_Target: 0
+      speed: 2
+      m_Value: 0
+    yGrid:
+      m_Target: 1
+      speed: 2
+      m_Value: 1
+    zGrid:
+      m_Target: 0
+      speed: 2
+      m_Value: 0
+  m_Rotation:
+    m_Target: {x: 0.067322746, y: -0.557581, z: 0.04543652, w: 0.8261519}
+    speed: 2
+    m_Value: {x: 0.06732206, y: -0.55757535, z: 0.04543606, w: 0.82614356}
+  m_Size:
+    m_Target: 10
+    speed: 2
+    m_Value: 10
+  m_Ortho:
+    m_Target: 0
+    speed: 2
+    m_Value: 0
+  m_CameraSettings:
+    m_Speed: 1
+    m_SpeedNormalized: 0.5
+    m_SpeedMin: 0.01
+    m_SpeedMax: 2
+    m_EasingEnabled: 1
+    m_EasingDuration: 0.4
+    m_FieldOfView: 90
+    m_NearClip: 0.03
+    m_FarClip: 10000
+    m_DynamicClip: 1
+    m_OcclusionCulling: 0
+  m_ShowGlobalGrid: 1
+  m_LastSceneViewRotation: {x: -0.18957207, y: 0.6440214, z: -0.1691951, w: -0.72157604}
+  m_LastSceneViewOrtho: 0
+  m_ReplacementShader: {fileID: 0}
+  m_ReplacementString: 
+  m_SceneVisActive: 1
+  m_LastLockedObject: {fileID: 0}
+  m_ViewIsLockedToObject: 0
+--- !u!114 &18
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 13853, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 300, y: 300}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Project Settings
+    m_Image: {fileID: 8487775502441791945, guid: 0000000000000000d000000000000000,
+      type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 362
+    y: 73
+    width: 1117
+    height: 606
+  m_ViewDataDictionary: {fileID: 0}
+  m_PosLeft: {x: 0, y: 0}
+  m_PosRight: {x: 0, y: 0}
+  m_Scope: 1
+  m_SplitterFlex: 0.23508772
+--- !u!114 &19
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 13855, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 300, y: 300}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Preferences
+    m_Image: {fileID: 8487775502441791945, guid: 0000000000000000d000000000000000,
+      type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 362
+    y: 73
+    width: 1117
+    height: 606
+  m_ViewDataDictionary: {fileID: 0}
+  m_PosLeft: {x: 0, y: 0}
+  m_PosRight: {x: 0, y: 0}
+  m_Scope: 0
+  m_SplitterFlex: 0.23508772
+--- !u!114 &20
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12111, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 400, y: 100}
+  m_MaxSize: {x: 2048, y: 2048}
+  m_TitleContent:
+    m_Text: Asset Store
+    m_Image: {fileID: 357073275683767465, guid: 0000000000000000d000000000000000,
+      type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 362
+    y: 73
+    width: 1117
+    height: 606
+  m_ViewDataDictionary: {fileID: 0}
+--- !u!114 &21
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6394,7 +6686,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 2.1.2
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.package-manager-ui
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.package-manager-ui
         m_AssetPath: Packages/com.unity.package-manager-ui
         m_Name: com.unity.package-manager-ui
         m_DisplayName: Package Manager UI
@@ -12585,7 +12877,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline
         m_AssetPath: Packages/com.unity.timeline
         m_Name: com.unity.timeline
         m_DisplayName: Unity Timeline
@@ -12640,7 +12932,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.ai
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.ai
         m_AssetPath: Packages/com.unity.modules.ai
         m_Name: com.unity.modules.ai
         m_DisplayName: AI
@@ -12690,7 +12982,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.animation
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.animation
         m_AssetPath: Packages/com.unity.modules.animation
         m_Name: com.unity.modules.animation
         m_DisplayName: Animation
@@ -12740,7 +13032,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.assetbundle
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.assetbundle
         m_AssetPath: Packages/com.unity.modules.assetbundle
         m_Name: com.unity.modules.assetbundle
         m_DisplayName: Asset Bundle
@@ -12790,7 +13082,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.audio
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.audio
         m_AssetPath: Packages/com.unity.modules.audio
         m_Name: com.unity.modules.audio
         m_DisplayName: Audio
@@ -12840,7 +13132,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.cloth
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.cloth
         m_AssetPath: Packages/com.unity.modules.cloth
         m_Name: com.unity.modules.cloth
         m_DisplayName: Cloth
@@ -12894,7 +13186,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.director
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.director
         m_AssetPath: Packages/com.unity.modules.director
         m_Name: com.unity.modules.director
         m_DisplayName: Director
@@ -12953,7 +13245,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.imageconversion
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.imageconversion
         m_AssetPath: Packages/com.unity.modules.imageconversion
         m_Name: com.unity.modules.imageconversion
         m_DisplayName: Image Conversion
@@ -13004,7 +13296,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.imgui
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.imgui
         m_AssetPath: Packages/com.unity.modules.imgui
         m_Name: com.unity.modules.imgui
         m_DisplayName: IMGUI
@@ -13054,7 +13346,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.jsonserialize
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.jsonserialize
         m_AssetPath: Packages/com.unity.modules.jsonserialize
         m_Name: com.unity.modules.jsonserialize
         m_DisplayName: JSONSerialize
@@ -13104,7 +13396,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.particlesystem
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.particlesystem
         m_AssetPath: Packages/com.unity.modules.particlesystem
         m_Name: com.unity.modules.particlesystem
         m_DisplayName: Particle System
@@ -13154,7 +13446,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.physics
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.physics
         m_AssetPath: Packages/com.unity.modules.physics
         m_Name: com.unity.modules.physics
         m_DisplayName: Physics
@@ -13204,7 +13496,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.physics2d
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.physics2d
         m_AssetPath: Packages/com.unity.modules.physics2d
         m_Name: com.unity.modules.physics2d
         m_DisplayName: Physics 2D
@@ -13254,7 +13546,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.screencapture
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.screencapture
         m_AssetPath: Packages/com.unity.modules.screencapture
         m_Name: com.unity.modules.screencapture
         m_DisplayName: Screen Capture
@@ -13308,7 +13600,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.terrain
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.terrain
         m_AssetPath: Packages/com.unity.modules.terrain
         m_Name: com.unity.modules.terrain
         m_DisplayName: Terrain
@@ -13358,7 +13650,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.terrainphysics
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.terrainphysics
         m_AssetPath: Packages/com.unity.modules.terrainphysics
         m_Name: com.unity.modules.terrainphysics
         m_DisplayName: Terrain Physics
@@ -13416,7 +13708,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.tilemap
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.tilemap
         m_AssetPath: Packages/com.unity.modules.tilemap
         m_Name: com.unity.modules.tilemap
         m_DisplayName: Tilemap
@@ -13470,7 +13762,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.ui
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.ui
         m_AssetPath: Packages/com.unity.modules.ui
         m_Name: com.unity.modules.ui
         m_DisplayName: UI
@@ -13520,7 +13812,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.uielements
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.uielements
         m_AssetPath: Packages/com.unity.modules.uielements
         m_Name: com.unity.modules.uielements
         m_DisplayName: UIElements
@@ -13574,7 +13866,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.umbra
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.umbra
         m_AssetPath: Packages/com.unity.modules.umbra
         m_Name: com.unity.modules.umbra
         m_DisplayName: Umbra
@@ -13624,7 +13916,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unityanalytics
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unityanalytics
         m_AssetPath: Packages/com.unity.modules.unityanalytics
         m_Name: com.unity.modules.unityanalytics
         m_DisplayName: Unity Analytics
@@ -13682,7 +13974,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequest
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequest
         m_AssetPath: Packages/com.unity.modules.unitywebrequest
         m_Name: com.unity.modules.unitywebrequest
         m_DisplayName: Unity Web Request
@@ -13732,7 +14024,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequestassetbundle
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequestassetbundle
         m_AssetPath: Packages/com.unity.modules.unitywebrequestassetbundle
         m_Name: com.unity.modules.unitywebrequestassetbundle
         m_DisplayName: Unity Web Request Asset Bundle
@@ -13790,7 +14082,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequestaudio
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequestaudio
         m_AssetPath: Packages/com.unity.modules.unitywebrequestaudio
         m_Name: com.unity.modules.unitywebrequestaudio
         m_DisplayName: Unity Web Request Audio
@@ -13848,7 +14140,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequesttexture
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequesttexture
         m_AssetPath: Packages/com.unity.modules.unitywebrequesttexture
         m_Name: com.unity.modules.unitywebrequesttexture
         m_DisplayName: Unity Web Request Texture
@@ -13906,7 +14198,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequestwww
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequestwww
         m_AssetPath: Packages/com.unity.modules.unitywebrequestwww
         m_Name: com.unity.modules.unitywebrequestwww
         m_DisplayName: Unity Web Request WWW
@@ -13980,7 +14272,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.vehicles
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.vehicles
         m_AssetPath: Packages/com.unity.modules.vehicles
         m_Name: com.unity.modules.vehicles
         m_DisplayName: Vehicles
@@ -14034,7 +14326,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.video
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.video
         m_AssetPath: Packages/com.unity.modules.video
         m_Name: com.unity.modules.video
         m_DisplayName: Video
@@ -14096,7 +14388,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.vr
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.vr
         m_AssetPath: Packages/com.unity.modules.vr
         m_Name: com.unity.modules.vr
         m_DisplayName: VR
@@ -14158,7 +14450,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.wind
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.wind
         m_AssetPath: Packages/com.unity.modules.wind
         m_Name: com.unity.modules.wind
         m_DisplayName: Wind
@@ -14208,7 +14500,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.xr
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.xr
         m_AssetPath: Packages/com.unity.modules.xr
         m_Name: com.unity.modules.xr
         m_DisplayName: XR
@@ -20225,7 +20517,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 2.1.2
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.package-manager-ui
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.package-manager-ui
         m_AssetPath: Packages/com.unity.package-manager-ui
         m_Name: com.unity.package-manager-ui
         m_DisplayName: Package Manager UI
@@ -26416,7 +26708,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline
         m_AssetPath: Packages/com.unity.timeline
         m_Name: com.unity.timeline
         m_DisplayName: Unity Timeline
@@ -26471,7 +26763,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.ai
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.ai
         m_AssetPath: Packages/com.unity.modules.ai
         m_Name: com.unity.modules.ai
         m_DisplayName: AI
@@ -26521,7 +26813,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.animation
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.animation
         m_AssetPath: Packages/com.unity.modules.animation
         m_Name: com.unity.modules.animation
         m_DisplayName: Animation
@@ -26571,7 +26863,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.assetbundle
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.assetbundle
         m_AssetPath: Packages/com.unity.modules.assetbundle
         m_Name: com.unity.modules.assetbundle
         m_DisplayName: Asset Bundle
@@ -26621,7 +26913,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.audio
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.audio
         m_AssetPath: Packages/com.unity.modules.audio
         m_Name: com.unity.modules.audio
         m_DisplayName: Audio
@@ -26671,7 +26963,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.cloth
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.cloth
         m_AssetPath: Packages/com.unity.modules.cloth
         m_Name: com.unity.modules.cloth
         m_DisplayName: Cloth
@@ -26725,7 +27017,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.director
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.director
         m_AssetPath: Packages/com.unity.modules.director
         m_Name: com.unity.modules.director
         m_DisplayName: Director
@@ -26784,7 +27076,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.imageconversion
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.imageconversion
         m_AssetPath: Packages/com.unity.modules.imageconversion
         m_Name: com.unity.modules.imageconversion
         m_DisplayName: Image Conversion
@@ -26835,7 +27127,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.imgui
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.imgui
         m_AssetPath: Packages/com.unity.modules.imgui
         m_Name: com.unity.modules.imgui
         m_DisplayName: IMGUI
@@ -26885,7 +27177,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.jsonserialize
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.jsonserialize
         m_AssetPath: Packages/com.unity.modules.jsonserialize
         m_Name: com.unity.modules.jsonserialize
         m_DisplayName: JSONSerialize
@@ -26935,7 +27227,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.particlesystem
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.particlesystem
         m_AssetPath: Packages/com.unity.modules.particlesystem
         m_Name: com.unity.modules.particlesystem
         m_DisplayName: Particle System
@@ -26985,7 +27277,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.physics
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.physics
         m_AssetPath: Packages/com.unity.modules.physics
         m_Name: com.unity.modules.physics
         m_DisplayName: Physics
@@ -27035,7 +27327,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.physics2d
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.physics2d
         m_AssetPath: Packages/com.unity.modules.physics2d
         m_Name: com.unity.modules.physics2d
         m_DisplayName: Physics 2D
@@ -27085,7 +27377,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.screencapture
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.screencapture
         m_AssetPath: Packages/com.unity.modules.screencapture
         m_Name: com.unity.modules.screencapture
         m_DisplayName: Screen Capture
@@ -27139,7 +27431,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.terrain
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.terrain
         m_AssetPath: Packages/com.unity.modules.terrain
         m_Name: com.unity.modules.terrain
         m_DisplayName: Terrain
@@ -27189,7 +27481,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.terrainphysics
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.terrainphysics
         m_AssetPath: Packages/com.unity.modules.terrainphysics
         m_Name: com.unity.modules.terrainphysics
         m_DisplayName: Terrain Physics
@@ -27247,7 +27539,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.tilemap
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.tilemap
         m_AssetPath: Packages/com.unity.modules.tilemap
         m_Name: com.unity.modules.tilemap
         m_DisplayName: Tilemap
@@ -27301,7 +27593,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.ui
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.ui
         m_AssetPath: Packages/com.unity.modules.ui
         m_Name: com.unity.modules.ui
         m_DisplayName: UI
@@ -27351,7 +27643,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.uielements
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.uielements
         m_AssetPath: Packages/com.unity.modules.uielements
         m_Name: com.unity.modules.uielements
         m_DisplayName: UIElements
@@ -27405,7 +27697,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.umbra
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.umbra
         m_AssetPath: Packages/com.unity.modules.umbra
         m_Name: com.unity.modules.umbra
         m_DisplayName: Umbra
@@ -27455,7 +27747,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unityanalytics
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unityanalytics
         m_AssetPath: Packages/com.unity.modules.unityanalytics
         m_Name: com.unity.modules.unityanalytics
         m_DisplayName: Unity Analytics
@@ -27513,7 +27805,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequest
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequest
         m_AssetPath: Packages/com.unity.modules.unitywebrequest
         m_Name: com.unity.modules.unitywebrequest
         m_DisplayName: Unity Web Request
@@ -27563,7 +27855,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequestassetbundle
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequestassetbundle
         m_AssetPath: Packages/com.unity.modules.unitywebrequestassetbundle
         m_Name: com.unity.modules.unitywebrequestassetbundle
         m_DisplayName: Unity Web Request Asset Bundle
@@ -27621,7 +27913,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequestaudio
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequestaudio
         m_AssetPath: Packages/com.unity.modules.unitywebrequestaudio
         m_Name: com.unity.modules.unitywebrequestaudio
         m_DisplayName: Unity Web Request Audio
@@ -27679,7 +27971,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequesttexture
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequesttexture
         m_AssetPath: Packages/com.unity.modules.unitywebrequesttexture
         m_Name: com.unity.modules.unitywebrequesttexture
         m_DisplayName: Unity Web Request Texture
@@ -27737,7 +28029,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequestwww
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequestwww
         m_AssetPath: Packages/com.unity.modules.unitywebrequestwww
         m_Name: com.unity.modules.unitywebrequestwww
         m_DisplayName: Unity Web Request WWW
@@ -27811,7 +28103,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.vehicles
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.vehicles
         m_AssetPath: Packages/com.unity.modules.vehicles
         m_Name: com.unity.modules.vehicles
         m_DisplayName: Vehicles
@@ -27865,7 +28157,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.video
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.video
         m_AssetPath: Packages/com.unity.modules.video
         m_Name: com.unity.modules.video
         m_DisplayName: Video
@@ -27927,7 +28219,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.vr
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.vr
         m_AssetPath: Packages/com.unity.modules.vr
         m_Name: com.unity.modules.vr
         m_DisplayName: VR
@@ -27989,7 +28281,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.wind
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.wind
         m_AssetPath: Packages/com.unity.modules.wind
         m_Name: com.unity.modules.wind
         m_DisplayName: Wind
@@ -28039,7 +28331,7 @@ MonoBehaviour:
         m_IsRootDependency: 1
         m_Version: 1.0.0
         m_Source: 2
-        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.6f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.xr
+        m_ResolvedPath: D:\Program Files\Unity Editors\2019.1.7f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.xr
         m_AssetPath: Packages/com.unity.modules.xr
         m_Name: com.unity.modules.xr
         m_DisplayName: XR
@@ -85956,10 +86248,10 @@ MonoBehaviour:
           m_Name: 
           m_Url: https://packages.unity.com
           m_IsDefault: 1
-    listPackagesVersion: 76
-    listPackagesOfflineVersion: 75
+    listPackagesVersion: 94
+    listPackagesOfflineVersion: 94
     searchOperationOngoing: 1
-    listOperationOngoing: 0
+    listOperationOngoing: 1
     listOperationOfflineOngoing: 0
   SearchFilter:
     SearchText: 
@@ -86078,37 +86370,7 @@ MonoBehaviour:
         Selected: 0
     BuiltInSelection:
       States: []
---- !u!114 &15
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 13853, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 300, y: 300}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Project Settings
-    m_Image: {fileID: 8487775502441791945, guid: 0000000000000000d000000000000000,
-      type: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 362
-    y: 73
-    width: 1117
-    height: 606
-  m_ViewDataDictionary: {fileID: 0}
-  m_PosLeft: {x: 0, y: 0}
-  m_PosRight: {x: 0, y: 0}
-  m_Scope: 1
-  m_SplitterFlex: 0.23508772
---- !u!114 &16
+--- !u!114 &22
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -86117,24 +86379,158 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 1
-  m_Script: {fileID: 12090, guid: 0000000000000000e000000000000000, type: 0}
+  m_Script: {fileID: 12014, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MinSize: {x: 300, y: 250}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 230, y: 250}
+  m_MaxSize: {x: 10000, y: 10000}
   m_TitleContent:
-    m_Text: Occlusion
-    m_Image: {fileID: -2243944637213960084, guid: 0000000000000000d000000000000000,
+    m_Text: Project
+    m_Image: {fileID: -7501376956915960154, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 0
-    y: 486
-    width: 366
-    height: 514
+    x: 362
+    y: 698
+    width: 1117
+    height: 303
   m_ViewDataDictionary: {fileID: 0}
---- !u!114 &17
+  m_SearchFilter:
+    m_NameFilter: 
+    m_ClassNames: []
+    m_AssetLabels: []
+    m_AssetBundleNames: []
+    m_VersionControlStates: []
+    m_SoftLockControlStates: []
+    m_ReferencingInstanceIDs: 
+    m_SceneHandles: 
+    m_ShowAllHits: 0
+    m_SearchArea: 1
+    m_Folders:
+    - Assets/Materials
+  m_ViewMode: 1
+  m_StartGridSize: 64
+  m_LastFolders:
+  - Assets/Materials
+  m_LastFoldersGridSize: -1
+  m_LastProjectPath: D:\Career\Portfolio\AlanHughClarkPortfolio\Path Tracing
+  m_LockTracker:
+    m_IsLocked: 0
+  m_FolderTreeState:
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: ea2a0000
+    m_LastClickedID: 10986
+    m_ExpandedIDs: 000000006429000000ca9a3b
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: 
+      m_OriginalName: 
+      m_EditFieldRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      m_UserData: 0
+      m_IsWaitingForDelay: 0
+      m_IsRenaming: 0
+      m_OriginalEventType: 11
+      m_IsRenamingFilename: 1
+      m_ClientGUIView: {fileID: 0}
+    m_SearchString: 
+    m_CreateAssetUtility:
+      m_EndAction: {fileID: 0}
+      m_InstanceID: 0
+      m_Path: 
+      m_Icon: {fileID: 0}
+      m_ResourceFile: 
+  m_AssetTreeState:
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: 000000006429000000ca9a3b
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: 
+      m_OriginalName: 
+      m_EditFieldRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      m_UserData: 0
+      m_IsWaitingForDelay: 0
+      m_IsRenaming: 0
+      m_OriginalEventType: 11
+      m_IsRenamingFilename: 1
+      m_ClientGUIView: {fileID: 0}
+    m_SearchString: 
+    m_CreateAssetUtility:
+      m_EndAction: {fileID: 0}
+      m_InstanceID: 0
+      m_Path: 
+      m_Icon: {fileID: 0}
+      m_ResourceFile: 
+  m_ListAreaState:
+    m_SelectedInstanceIDs: 5ae5ffff
+    m_LastClickedInstanceID: -6822
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: c623000030270000fc280000aaeffdff00000000a243000002310000e6390000483a0000fa320000
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: 
+      m_OriginalName: 
+      m_EditFieldRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      m_UserData: 0
+      m_IsWaitingForDelay: 0
+      m_IsRenaming: 0
+      m_OriginalEventType: 11
+      m_IsRenamingFilename: 1
+      m_ClientGUIView: {fileID: 11}
+    m_CreateAssetUtility:
+      m_EndAction: {fileID: 0}
+      m_InstanceID: 0
+      m_Path: 
+      m_Icon: {fileID: 0}
+      m_ResourceFile: 
+    m_NewAssetIndexInList: -1
+    m_ScrollPosition: {x: 0, y: 0}
+    m_GridSize: 64
+  m_DirectoriesAreaWidth: 249
+--- !u!114 &23
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12003, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Console
+    m_Image: {fileID: 111653112392082826, guid: 0000000000000000d000000000000000,
+      type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 362
+    y: 698
+    width: 1117
+    height: 303
+  m_ViewDataDictionary: {fileID: 0}
+--- !u!114 &24
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -86163,7 +86559,43 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_LastSelectedObjectID: -1140
---- !u!114 &18
+--- !u!114 &25
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12019, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Inspector
+    m_Image: {fileID: -6905738622615590433, guid: 0000000000000000d000000000000000,
+      type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 1481
+    y: 73
+    width: 437
+    height: 928
+  m_ViewDataDictionary: {fileID: 0}
+  m_OpenAddComponentMenu: 0
+  m_ObjectsLockedBeforeSerialization: []
+  m_InstanceIDsLockedBeforeSerialization: 
+  m_LockTracker:
+    m_IsLocked: 0
+  m_PreviewResizer:
+    m_CachedPref: 160
+    m_ControlHash: -371814159
+    m_PrefName: Preview_InspectorPreview
+  m_PreviewWindow: {fileID: 0}
+--- !u!114 &26
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -86190,7 +86622,7 @@ MonoBehaviour:
     height: 928
   m_ViewDataDictionary: {fileID: 0}
   m_VertSplit:
-    ID: 471
+    ID: 14766
     splitterInitialOffset: 174
     currentActiveSplitter: -1
     realSizes: dd010000b3010000
@@ -86525,404 +86957,3 @@ MonoBehaviour:
           m_VisibleColumns: 
           m_SortedColumns: 
   m_ClearOnPlay: 0
---- !u!114 &19
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12079, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 360, y: 390}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Lighting
-    m_Image: {fileID: 8394858894532624064, guid: 0000000000000000d000000000000000,
-      type: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 0
-    y: 484
-    width: 362
-    height: 517
-  m_ViewDataDictionary: {fileID: 0}
---- !u!114 &20
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12111, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 400, y: 100}
-  m_MaxSize: {x: 2048, y: 2048}
-  m_TitleContent:
-    m_Text: Asset Store
-    m_Image: {fileID: 357073275683767465, guid: 0000000000000000d000000000000000,
-      type: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 362
-    y: 73
-    width: 1117
-    height: 606
-  m_ViewDataDictionary: {fileID: 0}
---- !u!114 &21
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12014, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 230, y: 250}
-  m_MaxSize: {x: 10000, y: 10000}
-  m_TitleContent:
-    m_Text: Project
-    m_Image: {fileID: -7501376956915960154, guid: 0000000000000000d000000000000000,
-      type: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 362
-    y: 698
-    width: 1117
-    height: 303
-  m_ViewDataDictionary: {fileID: 0}
-  m_SearchFilter:
-    m_NameFilter: 
-    m_ClassNames: []
-    m_AssetLabels: []
-    m_AssetBundleNames: []
-    m_VersionControlStates: []
-    m_SoftLockControlStates: []
-    m_ReferencingInstanceIDs: 
-    m_SceneHandles: 
-    m_ShowAllHits: 0
-    m_SearchArea: 1
-    m_Folders:
-    - Assets/Resources/Compute Shaders
-  m_ViewMode: 1
-  m_StartGridSize: 64
-  m_LastFolders:
-  - Assets/Resources/Compute Shaders
-  m_LastFoldersGridSize: -1
-  m_LastProjectPath: D:\Career\Portfolio\AlanHughClarkPortfolio\Path Tracing
-  m_LockTracker:
-    m_IsLocked: 0
-  m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 642b0000
-    m_LastClickedID: 11108
-    m_ExpandedIDs: 0000000064290000f82b000000ca9a3b
-    m_RenameOverlay:
-      m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
-      m_EditFieldRect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
-      m_UserData: 0
-      m_IsWaitingForDelay: 0
-      m_IsRenaming: 0
-      m_OriginalEventType: 11
-      m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
-    m_SearchString: 
-    m_CreateAssetUtility:
-      m_EndAction: {fileID: 0}
-      m_InstanceID: 0
-      m_Path: 
-      m_Icon: {fileID: 0}
-      m_ResourceFile: 
-  m_AssetTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: 0000000064290000
-    m_RenameOverlay:
-      m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
-      m_EditFieldRect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
-      m_UserData: 0
-      m_IsWaitingForDelay: 0
-      m_IsRenaming: 0
-      m_OriginalEventType: 11
-      m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
-    m_SearchString: 
-    m_CreateAssetUtility:
-      m_EndAction: {fileID: 0}
-      m_InstanceID: 0
-      m_Path: 
-      m_Icon: {fileID: 0}
-      m_ResourceFile: 
-  m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c623000030270000fc280000aaeffdff00000000a243000002310000e6390000483a0000fa320000
-    m_RenameOverlay:
-      m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
-      m_EditFieldRect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
-      m_UserData: 0
-      m_IsWaitingForDelay: 0
-      m_IsRenaming: 0
-      m_OriginalEventType: 11
-      m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 2}
-    m_CreateAssetUtility:
-      m_EndAction: {fileID: 0}
-      m_InstanceID: 0
-      m_Path: 
-      m_Icon: {fileID: 0}
-      m_ResourceFile: 
-    m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
-    m_GridSize: 64
-  m_DirectoriesAreaWidth: 249
---- !u!114 &22
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12019, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Inspector
-    m_Image: {fileID: -6905738622615590433, guid: 0000000000000000d000000000000000,
-      type: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 1481
-    y: 73
-    width: 437
-    height: 928
-  m_ViewDataDictionary: {fileID: 0}
-  m_OpenAddComponentMenu: 0
-  m_ObjectsLockedBeforeSerialization: []
-  m_InstanceIDsLockedBeforeSerialization: 
-  m_LockTracker:
-    m_IsLocked: 0
-  m_PreviewResizer:
-    m_CachedPref: 160
-    m_ControlHash: -371814159
-    m_PrefName: Preview_InspectorPreview
-  m_PreviewWindow: {fileID: 0}
---- !u!114 &23
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12061, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Hierarchy
-    m_Image: {fileID: -590624980919486359, guid: 0000000000000000d000000000000000,
-      type: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 0
-    y: 73
-    width: 362
-    height: 392
-  m_ViewDataDictionary: {fileID: 0}
-  m_SceneHierarchy:
-    m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: c064fffffa64ffff0065fffffa86ffff3287ffff1088ffffd088ffff0c89ffffee89ffffd48affff108bffffee8bffffb28cffffee8cfffff08cffff5c8dffff988dffff768effff8efbffff
-      m_RenameOverlay:
-        m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
-        m_EditFieldRect:
-          serializedVersion: 2
-          x: 0
-          y: 0
-          width: 0
-          height: 0
-        m_UserData: 0
-        m_IsWaitingForDelay: 0
-        m_IsRenaming: 0
-        m_OriginalEventType: 11
-        m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 12}
-      m_SearchString: 
-    m_ExpandedScenes: []
-    m_CurrenRootInstanceID: 0
-    m_LockTracker:
-      m_IsLocked: 0
-    m_CurrentSortingName: TransformSorting
-  m_WindowGUID: 1394962381dccf6408584d19a7bb3933
---- !u!114 &24
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12013, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Scene
-    m_Image: {fileID: 2318424515335265636, guid: 0000000000000000d000000000000000,
-      type: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 362
-    y: 73
-    width: 1117
-    height: 606
-  m_ViewDataDictionary: {fileID: 0}
-  m_ShowContextualTools: 0
-  m_WindowGUID: c5180408c8cdf434a8ea86996006923d
-  m_Gizmos: 1
-  m_SceneIsLit: 1
-  m_SceneLighting: 0
-  m_2DMode: 0
-  m_isRotationLocked: 0
-  m_PlayAudio: 0
-  m_AudioPlay: 0
-  m_Position:
-    m_Target: {x: 0, y: 0, z: 0}
-    speed: 2
-    m_Value: {x: 0, y: 0, z: 0}
-  m_RenderMode: 2
-  m_CameraMode:
-    drawMode: 2
-    name: Shaded Wireframe
-    section: Shading Mode
-  m_ValidateTrueMetals: 0
-  m_DoValidateTrueMetals: 0
-  m_SceneViewState:
-    showFog: 1
-    showMaterialUpdate: 1
-    showSkybox: 0
-    showFlares: 1
-    showImageEffects: 1
-    showParticleSystems: 1
-  grid:
-    xGrid:
-      m_Target: 0
-      speed: 2
-      m_Value: 0
-    yGrid:
-      m_Target: 1
-      speed: 2
-      m_Value: 1
-    zGrid:
-      m_Target: 0
-      speed: 2
-      m_Value: 0
-  m_Rotation:
-    m_Target: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
-    speed: 2
-    m_Value: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
-  m_Size:
-    m_Target: 10
-    speed: 2
-    m_Value: 10
-  m_Ortho:
-    m_Target: 0
-    speed: 2
-    m_Value: 0
-  m_CameraSettings:
-    m_Speed: 1
-    m_SpeedNormalized: 0.5
-    m_SpeedMin: 0.01
-    m_SpeedMax: 2
-    m_EasingEnabled: 1
-    m_EasingDuration: 0.4
-    m_FieldOfView: 90
-    m_NearClip: 0.03
-    m_FarClip: 10000
-    m_DynamicClip: 1
-    m_OcclusionCulling: 0
-  m_ShowGlobalGrid: 1
-  m_LastSceneViewRotation: {x: -0.18957207, y: 0.6440214, z: -0.1691951, w: -0.72157604}
-  m_LastSceneViewOrtho: 0
-  m_ReplacementShader: {fileID: 0}
-  m_ReplacementString: 
-  m_SceneVisActive: 1
-  m_LastLockedObject: {fileID: 0}
-  m_ViewIsLockedToObject: 0
---- !u!114 &25
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12003, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Console
-    m_Image: {fileID: 111653112392082826, guid: 0000000000000000d000000000000000,
-      type: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 362
-    y: 698
-    width: 1117
-    height: 303
-  m_ViewDataDictionary: {fileID: 0}

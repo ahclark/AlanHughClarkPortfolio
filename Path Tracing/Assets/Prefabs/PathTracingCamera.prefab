@@ -99,9 +99,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DirectionalLight: {fileID: 0}
+  SphereSeed: 0
   SphereRadius: {x: 3, y: 8}
   SpheresMax: 100
   SpherePlacementRadius: 75
+  PassesStartLocked: 0
+  MaxPasses: 1
   m_computeShader: {fileID: 7200000, guid: 502b93b5892fbae41b0573119302690c, type: 3}
   m_postProcessingShader: {fileID: 4800000, guid: ec763386469c82c4e8b8db2b8a782bb8,
     type: 3}
@@ -135,3 +138,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4bcbd792b6e82a4ea3412049a174467, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Speed: 1.5
